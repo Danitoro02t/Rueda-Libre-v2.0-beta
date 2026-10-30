@@ -34,8 +34,34 @@ header {
   background-color: var(--color-verde-ruta);
 }
 
-.brand h1 {
+.navbar-dark .navbar-brand {
   color: var(--color-blanco);
+}
+
+.navbar {
+  padding-block: var(--space-sm);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-blanco);
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--color-blanco);
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 0.15em;
+  text-underline-offset: 0.2em;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
 }
 
 footer {
@@ -121,60 +147,6 @@ table tr > :first-child {
   color: var(--color-verde-ruta);
 }
 
-#menu {
-  background-color: transparent;
-  list-style: none;
-}
-
-#menu a {
-  padding: var(--space-sm) var(--space-md);
-  color: var(--color-blanco);
-  font-family: var(--font-body);
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-#menu a.activo {
-  color: var(--color-blanco);
-  background-color: rgba(255, 255, 255, 0.15);
-  font-weight: 600;
-  text-decoration: underline;
-  text-decoration-thickness: 0.15em;
-  text-underline-offset: 0.2em;
-}
-
-#menu a:hover,
-#menu a:focus {
-  color: var(--color-azul-noche);
-  background-color: var(--color-naranja-pedal);
-}
-
-.cta,
-button {
-  display: inline-block;
-  padding: var(--space-sm) var(--space-md);
-  color: var(--color-azul-noche);
-  background-color: var(--color-naranja-pedal);
-  font-family: var(--font-body);
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-
-.cta:hover,
-.cta:focus,
-button:hover {
-  color: var(--color-blanco);
-  background-color: var(--color-verde-ruta);
-}
-
-.cta:hover:focus,
-button:hover:focus {
-  outline-color: var(--color-blanco);
-  outline-offset: -3px;
-}
-
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
@@ -222,7 +194,7 @@ footer a:focus {
 
 a:focus,
 button:focus,
-#menu a:focus {
+.navbar-toggler:focus {
   outline: 3px solid var(--color-azul-noche);
   outline-offset: 3px;
 }
@@ -235,5 +207,16 @@ button:focus,
   th,
   td {
     padding: var(--space-sm);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar-brand {
+    max-width: calc(100% - 4.5rem);
+    white-space: normal;
+  }
+
+  .navbar-brand h1 {
+    white-space: normal;
   }
 }
