@@ -772,7 +772,7 @@ Dia 20 - 30/10/2026 - Migracion final de tarifas y reservas a Bootstrap
   comparacion de tiempo queda limitada por la ausencia de medicion de
   v1.5; la ganancia en lineas y consistencia si es verificable.
 - URL prevista para la beta:
-  https://danitoro02t.github.io/Rueda-Libre-v2.0/
+  https://danitoro02t.github.io/Rueda-Libre-v2.0-beta/
 - La URL respondio con la pagina 404 de GitHub Pages y el repositorio
   no tiene workflow de publicacion configurado. No publique la beta:
   hacerlo requiere subir los cambios al repositorio, lo que necesita
