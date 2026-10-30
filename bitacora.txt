@@ -1,0 +1,651 @@
+Bitacora - Rueda Libre
+Dia 1 - 20/10/2026
+
+1. Repositorio
+Cree la carpeta Actividad-dia1-Rueda-Libre dentro de mi repositorio
+de GitHub (Repositorio-HTML-CSS). El repo ya tenia git iniciado y
+conectado con GitHub, asi que solo tuve que crear la carpeta.
+
+2. Estructura
+Cree estos archivos y carpetas:
+- index.html (la pagina de inicio)
+- paginas/ (para las otras paginas que vamos a hacer despues)
+- img/ (ahi guarde el logo, logo.jpg)
+- bitacora.txt (este archivo)
+Nota: a la carpeta paginas le puse un archivo .gitkeep porque git no
+sube carpetas vacias.
+
+3. index.html
+Puse el doctype, el idioma en español (lang="es"), el charset UTF-8
+para que salgan bien las tildes, el viewport para celulares, una
+descripcion para google y el titulo "Rueda Libre | Alquiler de
+bicicletas en Medellín"
+En el body puse el nombre en un h1, un parrafo de bienvenida, la
+lista de servicios y el link para reservar por WhatsApp
+
+4. Network en DevTools
+Abri la pagina con Live Server, despues F12, pestaña Network y
+recargue la pagina. Le di clic a index.html y esto fue lo que vi:
+
+URL: http://127.0.0.1:5500/Actividad-dia1-Rueda-Libre/index.html
+Protocolo: http
+Host: 127.0.0.1 (es mi propio computador)
+Puerto: 5500
+Ruta: /Actividad-dia1-Rueda-Libre/index.html
+Metodo: GET
+Codigo de estado: 200 (quiere decir que todo salio bien)
+
+Tambien vi que aparte pidio el logo.jpg
+
+5. Pagina que no existe
+Escribi /promociones.html en la barra de direcciones y me salio
+el codigo 404. Eso significa que el servidor no encontro la pagina
+porque ese archivo no existe
+
+6. HTML, CSS y JavaScript
+- HTML: es la estructura y el contenido de la pagina. Ejemplo: el
+  titulo Rueda Libre y la lista de servicios
+- CSS: es para el diseño, como se ve la pagina. Ejemplo: ponerle los
+  colores verdes del logo y que los servicios se vean como tarjetas.
+- JavaScript: es para que la pagina haga cosas. Ejemplo: un boton que
+  arme el mensaje de WhatsApp con la bici y la fecha que elija el
+  cliente
+
+7. Commit
+Hice el commit con el mensaje "Crear estructura inicial y página base
+de Rueda Libre" y lo subi a GitHub con git push
+
+
+Dia 2 - Contenido de la pagina de inicio
+
+1. Esquema
+Deje un solo h1 (Rueda Libre) y 4 secciones con h2: Quiénes somos?,
+Nuestros servicios, ¿Cómo alquilar? y Encuéntranos. Cada servicio
+tiene su h3 y su parrafo. No me salte ningun nivel de encabezado
+
+2. strong y em
+Use strong para lo importante, por ejemplo "incluyen casco y
+candado", y em para matices como "aptas para principiantes"
+
+3. Listas
+- ol con los 4 pasos para alquilar.
+- ul con 3 beneficios (casco y candado, bicis revisadas, reserva
+  rapida)
+
+4. Imagenes
+Guarde en img/ portada.jpg, bicicleta.jpg y ruta.jpg. Todas con
+ruta relativa (img/...), alt que describe la imagen y width
+
+5. Enlaces
+- Absoluto: Google Maps, abre en otra pestaña con target="_blank".
+- Correo: mailto:hola@ruedalibre.example
+- Interno: en el primer parrafo hay un link a #encuentranos (le puse
+  id="encuentranos" a esa seccion)
+
+6. Revision en DevTools
+En Elements revise que las secciones quedaran una despues de la otra
+dentro del main y no una metida dentro de otra. En Network recargue
+y todo salio con 200, ningun 404
+
+
+Dia 3 - Pagina de tarifas
+
+1. Pagina nueva
+Cree paginas/tarifas.html con su estructura completa (doctype, lang,
+charset, viewport, descripcion) y su propio titulo: "Tarifas | Rueda
+Libre - Bicicletas en Medellín"
+
+2. Tablas
+Hice dos tablas, una de alquiler y otra de recorridos. Las dos tienen
+caption (el titulo de la tabla), thead, tbody, th y td.
+Los th de arriba tienen scope="col" porque describen una columna y
+los del nombre de cada fila (Urbana, Montaña, Río y Parques...)
+tienen scope="row". Esto sirve para los lectores de pantalla.
+A la seccion de recorridos le puse id="recorridos"
+
+3. Informacion extra
+Lo de casco y candado y los horarios los puse en parrafos y lo que
+hay que llevar en una lista ul. No lo meti en la tabla porque las
+tablas son solo para datos
+
+4. Rutas relativas
+- El logo en tarifas.html es ../img/logo.jpg. El ../ es para subir
+  una carpeta, porque tarifas esta dentro de paginas/.
+- De tarifas al inicio: ../index.html
+- Del inicio a tarifas: paginas/tarifas.html
+- Del servicio de recorridos a la tabla: paginas/tarifas.html#recorridos
+  (el archivo + el id de la seccion)
+
+5. Revision
+En Network todo cargo con 200, ningun 404. Tambien corregi una frase
+del inicio que decia que todas las rutas eran para principiantes,
+porque el Reto Las Palmas es dificil
+
+
+Dia 4 - Menu, pie de pagina y reservas (v0.1)
+
+1. Pagina de reservas
+Cree paginas/reservas.html con su estructura completa, el titulo
+"Reserva tu bicicleta", el correo con mailto y el horario en una
+lista de definiciones (dl): el dt es el dia y el dd el horario.
+  Lunes a viernes -> 7:00 a. m. a 7:00 p. m.
+  Sabados, domingos y festivos -> 6:00 a. m. a 2:00 p. m
+
+2. Menu y pie de pagina
+Puse el mismo menu (nav con una ul) al comienzo de las 3 paginas:
+Inicio, Tarifas y rutas, Reservas. Las rutas cambian segun la
+carpeta donde esta cada archivo.
+El pie de pagina (footer) tiene el nombre, el correo y el año.
+Tambien agregue "Reservar ahora" en el inicio y debajo de la tabla
+de recorridos
+
+3. Titulos de cada pagina
+- index.html: Rueda Libre | Alquiler de bicicletas en Medellín
+- tarifas.html: Tarifas | Rueda Libre - Bicicletas en Medellín
+- reservas.html: Reservas | Rueda Libre - Bicicletas en Medellín
+
+4. Tabla de rutas
+Origen                 -> Destino                       -> Ruta escrita
+index.html             -> index.html                    -> index.html
+index.html             -> paginas/tarifas.html          -> paginas/tarifas.html
+index.html             -> paginas/reservas.html         -> paginas/reservas.html
+index.html             -> tabla de recorridos           -> paginas/tarifas.html#recorridos
+index.html             -> seccion Encuéntranos          -> #encuentranos
+index.html             -> img/*.jpg                     -> img/logo.jpg (igual las otras)
+paginas/tarifas.html   -> index.html                    -> ../index.html
+paginas/tarifas.html   -> paginas/tarifas.html          -> tarifas.html
+paginas/tarifas.html   -> paginas/reservas.html         -> reservas.html
+paginas/tarifas.html   -> img/logo.jpg                  -> ../img/logo.jpg
+paginas/reservas.html  -> index.html                    -> ../index.html
+paginas/reservas.html  -> paginas/tarifas.html          -> tarifas.html
+paginas/reservas.html  -> paginas/reservas.html         -> reservas.html
+paginas/reservas.html  -> img/logo.jpg                  -> ../img/logo.jpg
+
+Lo que aprendi: si el archivo esta en la misma carpeta solo pongo el
+nombre, si esta en una subcarpeta pongo carpeta/archivo y si esta una
+carpeta arriba uso ../
+
+5. Revision
+Desde cada pagina entre a las otras usando solo el menu (9
+combinaciones) y en Network todo salio 200, ningun 404
+
+
+Dia 5 - Estructura semantica
+
+1. Esquema de regiones antes de editar
+- Inicio: header (logo, nombre del negocio y nav principal) -> main:
+  section "Pedalea Medellin a tu ritmo" -> section "Nuestras rutas"
+  con un article por ruta -> section "Quienes somos?" -> section
+  "Nuestra flota" con un article por bicicleta -> section "Nuestros
+  servicios" con un article por servicio y una section para "Por que
+  alquilar con nosotros?" -> section "Como alquilar?" -> section
+  "Encuentranos" -> footer.
+- Tarifas: header (logo, nombre del negocio y nav principal) -> main:
+  section "Alquiler de bicicletas" con su tabla -> section
+  "Recorridos guiados" con su tabla -> section "Informacion
+  importante" con la lista complementaria "Que llevar" en aside ->
+  footer.
+- Reservas: header (logo, nombre del negocio y nav principal) -> main:
+  section "Formulario de reserva" con el formulario -> aside
+  complementario con section "Contacto" y section "Horario de
+  atencion" -> footer.
+
+2. Elementos semanticos
+Las tres paginas usan header con nav principal, un unico main y
+footer. Cada bloque tematico de inicio es section con encabezado; las
+rutas, bicicletas y servicios independientes son article. En tarifas,
+cada tabla esta en su propia section y "Que llevar" esta en aside. En
+reservas, el formulario es el contenido principal y el contacto y el
+horario son contenido complementario en aside. El bloque de contacto
+de cada footer usa address para identificar semanticamente esos datos.
+
+3. Div y span
+Los div restantes solo agrupan elementos para el layout de CSS y no
+tienen un equivalente semantico que conserve esa funcion: header-layout
+y brand en el encabezado; hero-copy, route-grid y fleet-grid en inicio;
+booking-layout, form-row y form-field en reservas; footer-section para
+el nombre y horario de los pies de pagina. El span de "Precio por
+hora" en inicio es un contenedor en linea para presentacion; no hay
+una etiqueta semantica equivalente para ese texto.
+
+4. Comprobacion
+Se comprueba que cada pagina tenga un solo main, que cada section
+tenga encabezado, que se mantenga la jerarquia h1, h2 y h3 del Dia 1,
+y que funcionen los enlaces de navegacion, internos, de contacto y de
+reserva.
+
+
+Dia 6 - Formulario de reserva
+
+1. Grupos del formulario
+En reservas.html agregue el formulario dentro de main y de su seccion
+"Formulario de reserva". Los campos estan organizados en los grupos
+"Tus datos", "Tu alquiler" y "Confirmación".
+
+2. Eleccion de controles
+- Use radio para el tipo de bicicleta porque solo se puede escoger una
+  opcion entre urbana, montaña y electrica.
+- Use select para el plan y el recorrido guiado porque cada campo
+  permite escoger una opcion de una lista fija.
+- Use checkbox para aceptar las politicas porque representa una
+  decision afirmativa independiente.
+- Documento se captura como texto para conservar posibles ceros
+  iniciales; celular usa tel y correo usa email.
+
+3. Etiquetas y envio
+Cada control tiene id, name y una etiqueta asociada mediante for. El
+formulario declara action="reservas.html" y method="post". Incluye el
+boton "Enviar reserva". El sitio es estatico y no tiene un servidor
+que procese el envio POST; action indica el destino previsto, no
+confirma una reserva.
+
+
+Dia 7 - Validacion y teclado
+
+1. Reglas de validacion nativa
+Nombre, documento, correo, celular y fecha son obligatorios. El nombre
+tiene minlength="3"; el documento usa pattern="[0-9]{6,10}" y el
+celular pattern="3[0-9]{9}", ambos con title y texto de ayuda. La
+fecha se limita del 2026-11-01 al 2026-12-31. El tipo de bicicleta y
+el plan son obligatorios; la cantidad va de 1 a 6; comentarios
+admite hasta 300 caracteres y las politicas son obligatorias.
+
+2. Tabla de pruebas
+Campo                 | Dato de prueba          | Esperado             | Obtenido
+Nombre completo       | "Al"                    | Rechazado (< 3)      | Rechazado
+Documento             | "12AB567"               | Rechazado (letras)   | Rechazado
+Documento             | "123456"                | Aceptado             | Aceptado
+Correo                | "ana@"                  | Rechazado            | Rechazado
+Celular               | "3001234567"            | Aceptado             | Aceptado
+Celular               | "1234567890"            | Rechazado (no inicia 3) | Rechazado
+Celular               | "300123"                | Rechazado (corto)    | Rechazado
+Fecha                 | "2026-10-31"            | Rechazado (anterior) | Rechazado
+Fecha                 | "2026-11-01"            | Aceptado (limite)    | Aceptado
+Fecha                 | "2027-01-01"            | Rechazado (posterior)| Rechazado
+Cantidad              | 0                       | Rechazado            | Rechazado
+Cantidad              | 7                       | Rechazado            | Rechazado
+Tipo de bicicleta     | Sin seleccionar         | Rechazado            | Rechazado
+Plan                  | Sin seleccionar         | Rechazado            | Rechazado
+Politicas             | Sin aceptar             | Rechazado            | Rechazado
+Comentarios           | 301 caracteres          | Maximo 300           | Limitado a 300
+Formulario completo   | Datos validos           | Valido               | Valido
+
+3. Recorrido con teclado
+Con Tab se recorrieron enlaces y campos en el orden del documento:
+datos personales, alquiler, confirmacion y envio. Shift+Tab regreso
+del nombre al enlace de correo. Las flechas cambiaron la opcion de
+bicicleta, Espacio marco las politicas y Enter en el boton de envio
+con el formulario incompleto mantuvo la pagina y enfoco el nombre
+obligatorio. El control de fecha puede tener segmentos internos que
+el navegador recorre con Tab.
+
+4. Limite del sitio estatico
+Las pruebas verifican la validacion nativa; no se envia una reserva
+real. El sitio no tiene un servidor que reciba el POST del formulario.
+
+
+Dia 8 - Auditoria de accesibilidad y paleta
+
+1. Auditoria de las paginas
+- Idioma: las tres paginas declaran lang="es"; se conserva porque
+  todo el contenido esta en español.
+- Imagenes: las seis imagenes tienen alt descriptivo (logo, portada,
+  bicicleta y mapa de ruta); ninguna es decorativa ni carece de alt.
+- Encabezados: cada pagina tiene un h1 y los h2/h3 siguen la
+  jerarquia logica; no se requirieron cambios.
+- Enlaces: los enlaces de navegación, correo, mapas, recorridos y
+  WhatsApp describen su destino. En inicio y tarifas reemplace
+  "Reservar ahora" por "Reservar una bicicleta o recorrido" para que
+  el proposito se entienda fuera de contexto.
+- Teclado: se comprobó Tab y Shift+Tab en reservas, con las opciones
+  de radio mediante flechas, la casilla con Espacio y el envio con
+  Enter. El formulario incompleto conserva la pagina y enfoca el
+  primer campo invalido. El control de fecha puede usar varias
+  pulsaciones de Tab para recorrer sus segmentos internos.
+- Navegacion entre paginas: se verificaron los enlaces internos,
+  destinos de anclas, imagenes locales y rutas con sus mayusculas.
+
+2. Contraste WCAG 2.1
+Combinacion                         | Contraste | Clasificacion
+Blanco sobre Verde Ruta             | 5.31:1    | Apta para texto normal
+Blanco sobre Naranja Pedal          | 2.22:1    | No apta
+Azul Noche sobre Naranja Pedal      | 7.20:1    | Apta para texto normal
+Azul Noche sobre Crema              | 14.83:1   | Apta para texto normal
+Gris Asfalto sobre Crema            | 5.57:1    | Apta para texto normal
+Verde Ruta sobre Crema              | 4.93:1    | Apta para texto normal
+Naranja Pedal sobre Crema           | 2.06:1    | No apta
+Blanco sobre Azul Noche             | 15.97:1   | Apta para texto normal
+
+Los contrastes se calcularon con la formula de luminancia relativa
+WCAG. Ninguna combinacion queda solamente en la categoria de texto
+grande: las que pasan 3:1 tambien pasan 4.5:1.
+
+3. Mapa de uso de color propuesto
+- Fondo general: Crema.
+- Texto principal y titulos: Azul Noche sobre Crema.
+- Texto secundario: Gris Asfalto sobre Crema.
+- Enlaces y botones principales: Verde Ruta con texto blanco.
+- Botones secundarios: Naranja Pedal con texto Azul Noche.
+- No usar texto blanco sobre Naranja Pedal ni texto Naranja Pedal
+  sobre Crema; ambos fallan incluso para texto grande.
+
+4. Publicacion
+El repositorio publico aparece actualmente como
+https://github.com/Danitoro02t/Repositorio-riwi. La URL prevista para
+este sitio es
+https://danitoro02t.github.io/Repositorio-riwi/Actividad-dia1-Rueda-Libre/
+pero al revisarla devolvio 404 y la API publica informa que GitHub
+Pages aun no esta configurado. No se pudo publicar desde este entorno:
+GitHub requiere autenticacion y no hay una sesion disponible. Por
+esto no se afirma que la URL este publicada ni se modifico la
+descripcion del repositorio. Cuando Pages se active desde main y se
+suban los commits locales, verificar las tres paginas, imagenes y
+enlaces en esa URL y agregarla como Website/descripcion del repo.
+
+5. Hoja de estilos, tipografias y marca
+- Cree css/styles.css con variables para los cinco colores de marca,
+  blanco como color neutro del mapa aprobado, Montserrat y Open Sans
+  con fuentes de respaldo, y una escala de espaciado en rem.
+- En las tres paginas agregue preconnect y la hoja de Google Fonts
+  antes de styles.css. Las rutas relativas son css/styles.css en el
+  inicio y ../css/styles.css en tarifas y reservas.
+- El body define con variables Open Sans, Azul Noche y fondo Crema;
+  los parrafos heredan la tipografia y el color. Los encabezados usan
+  Montserrat con un solo selector agrupado.
+- Verde Ruta se usa con texto blanco; Naranja Pedal con Azul Noche;
+  Azul Noche, Gris Asfalto y Verde Ruta se usan sobre Crema segun el
+  mapa. No se usa texto blanco sobre Naranja Pedal ni Naranja Pedal
+  sobre Crema.
+
+6. Comprobacion de estilos computados
+- En las tres paginas la hoja local y Google Fonts cargaron. Los
+  encabezados computan Montserrat, peso 700; los parrafos Open Sans,
+  peso 400.
+- En el parrafo de inicio, font-family y color computados coinciden
+  con los del body: son propiedades heredadas.
+- background-color no se hereda: el body computa Crema y el parrafo
+  transparente (rgba(0, 0, 0, 0)).
+- Revise las tres paginas: no tienen atributos style ni etiquetas
+  <style>. Los valores computados se verificaron en el navegador; se
+  pueden contrastar en DevTools, paneles Styles y Computed.
+
+
+Dia 10 - Navegacion, estados interactivos y cascada
+
+1. Enlace activo del menu
+- Asigne id="menu" a la lista de navegacion en las tres paginas.
+  Marque el enlace actual con class="activo" y aria-current="page":
+  Inicio, Tarifas y rutas o Reservas, segun corresponda.
+- El menu usa fondo Crema; sus enlaces Gris Asfalto y el enlace
+  activo Verde Ruta, combinaciones aprobadas con contraste suficiente.
+
+2. Especificidad y conflicto de cascada
+- #menu a tiene especificidad 1-0-1 (un id, cero clases y un
+  elemento). .activo tiene 0-1-0 (cero ids, una clase y cero
+  elementos). Para color, gana #menu a aunque la clase aparezca en el
+  HTML; por eso color de .activo queda tachado en Styles.
+- font-weight de .activo no queda tachado, porque #menu a no declara
+  esa propiedad. La clase si funciona para el peso, pero no para el
+  color en el menu.
+- Resolvi el conflicto con #menu a.activo (1-1-1), que supera a
+  #menu a y aplica Verde Ruta sin !important ni estilos en linea.
+  La regla original .activo sigue aportando font-weight: 600.
+
+3. Estados de enlaces, CTA y formulario
+- Los enlaces del menu tienen :hover y :focus con fondo Naranja Pedal
+  y texto Azul Noche. El foco incluye contorno visible.
+- Los enlaces de llamada a la accion usan la clase .cta; el estado
+  normal combina Azul Noche sobre Naranja Pedal y hover/focus usa
+  texto blanco sobre Verde Ruta.
+- Los campos del formulario tienen fondo blanco y un contorno Verde
+  Ruta de 3 px al recibir foco. Botones, enlaces y controles conservan
+  un indicador visible al navegar con teclado.
+
+4. Comprobacion
+- Se recorrieron Inicio, Tarifas y rutas y Reservas con Tab; el enlace
+  actual se distingue y los enlaces, CTA y campos muestran el foco.
+- Los colores, reglas calculadas y estados :hover/:focus se probaron
+  en el navegador. Para repetir la inspeccion manual en DevTools,
+  Styles muestra la diferencia entre #menu a y .activo; Computed
+  confirma el ganador #menu a.activo. El boton :hov permite forzar
+  :hover y :focus para revisar los estados visuales.
+
+
+Dia 11 - Flexbox en encabezado y pie
+
+1. Distribucion
+- Agrupe el logo y el nombre del negocio en un bloque flexible y puse
+  la navegacion en el extremo opuesto, centrada verticalmente.
+- El menu comparte la hoja de estilos de las tres paginas: sus enlaces
+  se separan con gap y pueden pasar a otra linea.
+- Organicé el pie en tres bloques: marca, contacto y horario. En
+  pantallas anchas quedan en fila y alineados arriba.
+
+2. Prueba al estrechar la ventana
+- Revise las tres paginas con anchos de 1440, 390 y 320 px.
+- A 1440 px, la marca y el menu quedan en lados opuestos y los tres
+  bloques del pie se mantienen en una fila.
+- Al bajar a 390 px, la navegacion pasa debajo de la marca y los
+  bloques del pie se apilan.
+- A 320 px, el titulo puede ocupar dos lineas y los enlaces del menu
+  pasan a una segunda linea en vez de desbordarse. El pie conserva sus
+  tres bloques apilados.
+
+Dia 12 - 28/10/2026 - Cuadricula adaptable de la flota
+
+1. Tarjetas
+- Agregue la seccion "Nuestra flota" con siete articulos: Urbana
+  Clasica, Urbana Plegable, Montana Trail, Gravel Aventura, Electrica
+  Urbana, Infantil y Tandem.
+- Cada tarjeta muestra foto, nombre, descripcion, precio por hora y
+  enlace "Reservar" al formulario.
+- Como el proyecto solo tenia una foto de bicicleta, reutilice
+  img/bicicleta.jpg en las tarjetas.
+- Cada tarjeta conserva el modelo de caja con relleno, borde y esquinas
+  redondeadas. El contenido usa Flexbox en columna para mantener el
+  enlace al final aunque cambie la longitud de la descripcion.
+
+2. Cuadricula y comprobacion
+- Use Grid con repeat(auto-fit, minmax(16rem, 1fr)) y gap uniforme;
+  al agregar el septimo articulo no fue necesario cambiar el CSS.
+- En el modo de viewport emulado del navegador, revise la pagina con
+  anchos de 1280, 900 y 500 px:
+  - 1280 px: 4 columnas.
+  - 900 px: 3 columnas.
+  - 500 px: 1 columna.
+- Comprobe que las tarjetas de cada fila tienen la misma altura, los
+  enlaces quedan alineados al final y las siete imagenes cargan.
+
+Dia 13 - 28/10/2026 - Grid y Flexbox en los layouts
+
+1. Decisiones de layout
+- Portada: use Grid con dos columnas `1fr` y `1fr`, y alinee el
+  contenido al centro vertical con `align-items`. Aunque visualmente
+  es una fila, el bloque combina la posicion horizontal de columnas y
+  la alineacion vertical de contenido e imagen: son dos dimensiones.
+- Galeria "Nuestras rutas": use Grid con `repeat(3, minmax(0, 1fr))`
+  y `gap` para colocar tres tarjetas en columnas iguales. Organiza
+  tanto columnas como filas si el espacio cambia, por eso es
+  bidimensional.
+- Reservas: use Grid con columnas `2fr 1fr` para dar al formulario
+  dos partes del espacio y a la informacion una. Debe relacionar dos
+  areas en una composicion de pagina, asi que Grid facilita ambas
+  dimensiones.
+- Fila de documento y celular: use Flexbox con `gap` para distribuir
+  los dos campos relacionados horizontalmente. Es una sola fila, por
+  lo que basta una dimension; en pantalla estrecha se apilan.
+- Encabezado: conserve Flexbox con `justify-content`, `align-items` y
+  `gap` para separar marca y menu en una fila. Es una distribucion
+  lineal, que puede envolverse en pantallas estrechas.
+- Pie: conserve Flexbox con `justify-content`, `align-items` y `gap`
+  para alinear sus tres bloques en una fila y permitir que se envuelvan.
+  Los bloques solo necesitan una dimension principal.
+
+2. Adaptacion y comprobaciones
+- La portada, la galeria y reservas pasan a una columna en pantallas
+  estrechas; la galeria tambien muestra dos columnas en anchos
+  intermedios. La flota mantiene su cuadricula adaptable existente.
+- El nombre, documento, correo, celular y demas controles conservan
+  sus requisitos HTML de validacion, mensajes de ayuda y orden de
+  teclado; el campo de documento y celular comparten fila en escritorio.
+- En escritorio, revisar la portada en dos columnas, las tres rutas
+  en una fila y reservas con columnas 2:1. En movil, comprobar
+  columnas apiladas, navegacion y pie sin desbordamiento, y probar el
+  envio con datos invalidos para confirmar la validacion nativa.
+
+
+Dia 14 - 28/10/2026 - Ajustes responsive mobile-first (v1.5)
+
+1. Problemas encontrados y soluciones
+- La hoja partia de grids de escritorio y usaba media queries max-width,
+  por lo que la estructura movil dependia de sobrescribir el layout.
+  Cambie la base a una columna y reserve los cambios de columnas para
+  min-width: 768px y min-width: 1200px.
+- En el encabezado, la marca y la navegacion podian competir por el
+  espacio estrecho y el menu quedaba alineado a la derecha. En movil
+  apile y centre la marca y el menu; desde 768px restableci la fila y
+  la distribucion del MiniReto 1.
+- A 360px, la tabla de recorridos sin ajustes ocupaba aproximadamente
+  359px dentro de un contenedor de 313px y ampliaba la pagina mas alla
+  del viewport. Aplique ancho completo, columnas fijas, texto y relleno
+  compactos y ajuste de linea; las dos tablas quedan dentro del ancho.
+- El formulario de reservas y su informacion lateral quedaban en
+  columnas en anchos medianos. Mantengo ambas secciones apiladas hasta
+  1200px y paso a dos columnas al alcanzar ese ancho.
+
+2. Comprobacion responsive
+- Emule los anchos de 360px, 768px y 1280px en el navegador integrado
+  y revise Inicio, Tarifas y Reservas.
+- A 360px: una columna en portada, rutas y reservas; las tablas no
+  exceden su contenedor; no hay desbordamiento horizontal.
+- A 768px: portada en dos columnas, rutas en dos columnas y encabezado
+  y pie en fila.
+- A 1280px: rutas en tres columnas y reservas en dos columnas.
+- En las tres paginas y anchos, las imagenes caben en sus contenedores.
+- No se probo en un celular fisico ni se publico en GitHub Pages desde
+  este entorno; esas comprobaciones quedan pendientes.
+
+
+Dia 15 - 29/10/2026 - Pruebas de validacion nativa y teclado
+
+1. Pruebas de validacion
+Ejecute las pruebas en Chromium integrado usando la validacion nativa
+del formulario (checkValidity). Se envio un formulario completo de
+prueba a la validacion, sin servidor:
+
+Campo                 | Dato de prueba           | Resultado esperado       | Resultado obtenido
+Nombre completo       | "Al"                     | Rechazado (< 3)          | Rechazado
+Nombre completo       | "Ana Perez"              | Aceptado                 | Aceptado
+Documento             | "12AB567"                | Rechazado (solo numeros) | Rechazado
+Documento             | "123456"                 | Aceptado (6 digitos)     | Aceptado
+Correo                | "ana@"                   | Rechazado                | Rechazado
+Celular               | "3001234567"             | Aceptado                 | Aceptado
+Celular               | "1234567890"             | Rechazado (no inicia 3)  | Rechazado
+Celular               | "300123"                 | Rechazado (corto)        | Rechazado
+Fecha                 | "2026-10-31"             | Rechazado (antes del min)| Rechazado
+Fecha                 | "2026-11-01"             | Aceptado (fecha minima)  | Aceptado
+Fecha                 | "2026-12-31"             | Aceptado (fecha maxima)  | Aceptado
+Fecha                 | "2027-01-01"             | Rechazado (despues max)  | Rechazado
+Cantidad              | 0                        | Rechazado                | Rechazado
+Cantidad              | 7                        | Rechazado                | Rechazado
+Cantidad              | 1.5                      | Rechazado (no entero)    | Rechazado
+Cantidad              | 1 y 6                    | Aceptados (limites)      | Aceptados
+Tipo de bicicleta     | Ninguna opcion           | Rechazado                | Rechazado
+Plan                  | Sin seleccionar          | Rechazado                | Rechazado
+Politicas             | Sin aceptar              | Rechazado                | Rechazado
+Campos obligatorios   | Cada uno vacio por turno | Rechazado                | Rechazado en los 8
+Comentarios           | 301 caracteres           | Limite de 300            | Limitado a 300
+Formulario completo   | Datos validos            | Valido                   | Valido
+
+2. Recorrido con teclado
+- Tab y Shift+Tab permiten recorrer el menu y los controles en orden
+  de lectura: datos personales, fecha, bicicleta, plan, cantidad,
+  recorrido opcional, comentarios, politicas y envio. El control de
+  fecha tiene segmentos internos que pueden requerir varias pulsaciones
+  de Tab.
+- Las flechas cambian la opcion de bicicleta y Espacio marca la casilla
+  de politicas.
+- Enter sobre el boton con datos incompletos no envia el formulario;
+  la validacion nativa enfoca el primer campo obligatorio.
+- Se comprobo que los datos completos satisfacen las restricciones.
+  No se puede confirmar una reserva real: el proyecto es estatico y no
+  cuenta con un servidor para procesar el POST.
+
+
+Dia 16 - 30/10/2026 - Integracion del catalogo con Bootstrap
+
+1. Tiempo invertido
+- Aproximadamente 14 minutos en comparar la carpeta adjunta con el
+  proyecto, integrar las paginas, estilos e imagenes, y comprobar los
+  enlaces. Es una estimacion a partir del tiempo de la sesion, no un
+  cronometraje exacto.
+
+2. Distribucion de la flota: CSS propio frente a Bootstrap
+- En la version propia inicial, `css/styles.css` tenia 4 lineas y
+  ninguna regla de Grid o Flexbox para distribuir las bicicletas.
+  `.bici` solo definia fondo, bordes redondeados, relleno y altura;
+  `.precio` definia color y negrita.
+- En la version integrada, la distribucion tampoco requiere reglas
+  CSS propias: el contenedor usa `row g-4` y cada una de las 7 tarjetas
+  usa `col-12 col-md-6 col-lg-4`. El CSS compartido conserva la
+  apariencia de las tarjetas y los precios.
+- En Bootstrap, la flota pasa de 1 columna a 2 desde 768 px y a 3
+  desde 992 px; `g-4` agrega separacion entre filas y columnas.
+
+3. Que resolvio Bootstrap y que control se pierde
+- Sin escribir media queries ni una cuadricula propia, Bootstrap
+  aporto el sistema de 12 columnas, los puntos de corte responsive y
+  el espacio consistente entre tarjetas.
+- A cambio, la distribucion queda sujeta a los puntos de corte y
+  anchos predefinidos de Bootstrap, en vez de poder ajustar cada ancho
+  exactamente como en un Grid CSS propio. Tambien dependemos de cargar
+  la hoja de Bootstrap desde su CDN y de sus clases; los ajustes muy
+  especificos pueden requerir sobrescribir sus estilos.
+
+4. Comprobacion
+- Revise los enlaces internos, las anclas y las imagenes de Inicio,
+  Tarifas y Reservas; todos apuntan a recursos existentes.
+
+
+Dia 17 - 30/10/2026 - Prueba responsive de la flota con Bootstrap 5.3
+
+1. Trabajo y tiempo
+- Aproximadamente 5 minutos adicionales para preparar la pagina de
+  prueba, revisar sus rutas relativas y probarla en el navegador. Es
+  una estimacion, no un cronometraje exacto; sumados a los 14 minutos
+  de la integracion anterior, son aproximadamente 19 minutos.
+- La pagina `pruebas/catalogo-bootstrap.html` carga Bootstrap 5.3.8
+  desde jsDelivr: la hoja CSS y el bundle JavaScript, ambos con SRI.
+  Incluye un enlace a la documentacion oficial de la grilla.
+
+2. Distribucion: CSS propio frente a clases Bootstrap
+- La version propia inicial de `css/styles.css` tenia 4 lineas fisicas
+  (3 reglas y una linea vacia). Tenia 0 lineas que distribuyeran la
+  flota en columnas: `.bici` daba apariencia a cada tarjeta y `.precio`
+  daba formato al precio.
+- La pagina de prueba tampoco agrega CSS propio para distribuir la
+  flota: usa 1 fila `row g-4` y repite en sus 7 tarjetas las clases
+  `col-12 col-sm-6 col-lg-4 col-xl-3` (28 clases de columna en total).
+  La hoja compartida sigue dando estilo a las tarjetas, pero no define
+  cuantas columnas tiene la flota.
+- Los anchos resultantes son 1 columna antes de sm, 2 desde 576 px,
+  3 desde lg (992 px) y 4 desde xl (1200 px). `g-4` agrega separacion
+  entre filas y columnas.
+
+3. Beneficio y control
+- Bootstrap resolvio sin media queries propias las columnas
+  responsive, los puntos de corte y el espacio uniforme de la grilla.
+- Se cede control sobre los anchos y cortes exactos: la prueba queda
+  vinculada a los breakpoints del sistema de grilla de Bootstrap.
+  Para otro comportamiento habria que cambiar las clases o escribir
+  reglas propias; tambien se depende de que el CDN este disponible.
+
+4. Comprobacion en modo dispositivo
+- Revise la pagina con viewport de 500, 700, 1000 y 1300 px; conte
+  respectivamente 1, 2, 3 y 4 columnas.
+- En Network, el CSS y el bundle de Bootstrap respondieron 200. No
+  hubo solicitudes fallidas ni errores de consola.
+- Se comprobaron los recursos y enlaces relativos desde `pruebas/`.
+
+
+url: https://danitoro02t.github.io/Rueda-Libre-v0.2/index.html
