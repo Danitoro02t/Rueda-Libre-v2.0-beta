@@ -711,3 +711,70 @@ Dia 19 - 30/10/2026 - Grilla Bootstrap en la pagina de inicio
   a dos desde sm; rutas pasan de una a dos desde md. A 1280 px la flota
   y rutas tienen tres columnas y beneficios cuatro. No hay
   desbordamiento horizontal.
+
+
+Dia 20 - 30/10/2026 - Migracion final de tarifas y reservas a Bootstrap
+
+1. Grilla de las paginas
+- Tarifas agrupa las dos tablas en una columna `col-lg-8` y la
+  informacion complementaria en `col-lg-4`; en anchos menores se
+  apilan. Las tablas conservan sus estilos propios y usan
+  `table-responsive` para no ensanchar el viewport.
+- Reservas distribuye el formulario y el contacto en columnas
+  `col-md-8` y `col-md-4`. Documento/celular, fecha/plan/cantidad/ruta
+  usan filas Bootstrap y vuelven a una columna en pantallas estrechas.
+- Inicio, tarifas y reservas comparten el encabezado y el pie con
+  utilidades Bootstrap. `styles.css` conserva marca, tipografia,
+  colores, tarjetas, tablas y estados; ya no distribuye esas regiones.
+
+2. Comparativa CSS propio vs Bootstrap
+- El snapshot historico de `css/styles.css` consultado en GitHub tiene
+  494 lineas fisicas (commit
+  https://github.com/Danitoro02t/Rueda-Libre-v2.0/commit/71fce70fed924da59ba10fc73253838d86af07eb).
+  Se conto con `git show <commit>:css/styles.css | wc -l`.
+- La hoja final tiene 239 lineas: 255 menos que el snapshot historico,
+  una reduccion del 51,6 %. El estado previo a esta migracion tenia
+  455 lineas; esta limpieza redujo ese estado local en 216 lineas.
+- Tiempo de v1.5: no hay cronometraje ni horas de inicio/fin en la
+  entrada del 28/10/2026; no se puede afirmar un tiempo real de trabajo.
+- Tiempo de esta migracion: 5 min 19 s de tiempo transcurrido, desde
+  21:27:43Z hasta 21:33:02Z el 30/10/2026. Es tiempo de sesion, no una
+  medicion de trabajo activo. No se inventa una comparacion porcentual
+  de tiempos porque el valor historico no fue registrado.
+- Conflictos/ajustes resueltos: retire el reset global de margenes de
+  `h3` y `p` para dejar actuar Reboot y las utilidades de espaciado;
+  sustitui las distribuciones propias del encabezado, pie y formulario
+  por clases de grilla; limite los estilos de controles a campos de
+  texto, selects y textarea para no alterar radios y checkbox.
+- Ventajas observadas: menos CSS de distribucion, breakpoints comunes y
+  columnas consistentes sin media queries de layout propias.
+- Desventajas observadas: dependencia de Bootstrap servido por CDN,
+  breakpoints predeterminados y necesidad de vigilar la cascada al
+  conservar identidad visual y estilos de tabla propios.
+
+3. Pruebas y validacion nativa
+- En el navegador integrado revise Inicio, Tarifas, Reservas y el
+  catalogo a 360, 768 y 1280 px. No hubo desbordamiento horizontal y
+  las imagenes cargaron en los doce casos.
+- Tarifas pasa de apilado a dos columnas a 1280 px; Reservas mantiene
+  el reparto 8/4 desde 768 px. El catalogo muestra 1, 2 y 4 columnas
+  de flota en 360, 768 y 1280 px.
+- Compare los 13 controles con la version anterior: sus atributos
+  `required`, `min`, `max`, `minlength`, `maxlength`, `pattern`,
+  `type`, `title`, nombres, valores y ayudas siguen intactos. El
+  formulario no usa `novalidate`; en Chromium los campos vacios y un
+  documento con patron incorrecto son invalidos, y un ejemplo con
+  datos validos pasa `checkValidity()`.
+
+4. Conclusion y publicacion
+- Bootstrap redujo la hoja historica en 255 lineas (51,6 %) y
+  simplifico la distribucion responsive de las tres paginas. La
+  comparacion de tiempo queda limitada por la ausencia de medicion de
+  v1.5; la ganancia en lineas y consistencia si es verificable.
+- URL prevista para la beta:
+  https://danitoro02t.github.io/Rueda-Libre-v2.0/
+- La URL respondio con la pagina 404 de GitHub Pages y el repositorio
+  no tiene workflow de publicacion configurado. No publique la beta:
+  hacerlo requiere subir los cambios al repositorio, lo que necesita
+  un commit, y la instruccion fue trabajar sin commit. Por tanto, la
+  URL queda pendiente de publicacion y no se presenta como activa.

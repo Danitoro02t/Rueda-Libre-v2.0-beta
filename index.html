@@ -12,17 +12,17 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="header-layout">
-      <div class="brand">
-        <img src="img/logo.jpg" alt="Logo de Rueda Libre: una bicicleta blanca dentro de un círculo verde" width="100">
-        <h1>Rueda Libre</h1>
+  <header class="py-3">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <div class="brand d-flex flex-column flex-md-row align-items-center gap-2">
+        <img class="flex-shrink-0" src="img/logo.jpg" alt="Logo de Rueda Libre: una bicicleta blanca dentro de un círculo verde" width="64" height="64">
+        <h1 class="fs-4 fw-bold text-center text-md-start mb-0">Rueda Libre</h1>
       </div>
-      <nav aria-label="Navegación principal">
-        <ul id="menu">
-          <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
-          <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
-          <li><a href="paginas/reservas.html">Reservas</a></li>
+      <nav class="flex-grow-1" aria-label="Navegación principal">
+        <ul id="menu" class="nav justify-content-center justify-content-md-end flex-wrap gap-2">
+          <li class="nav-item"><a class="nav-link activo" href="index.html" aria-current="page">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="paginas/tarifas.html">Tarifas y rutas</a></li>
+          <li class="nav-item"><a class="nav-link" href="paginas/reservas.html">Reservas</a></li>
         </ul>
       </nav>
     </div>
@@ -164,7 +164,7 @@
 
     <section id="servicios">
       <h2>Nuestros servicios</h2>
-      <img src="img/bicicleta.jpg" alt="Bicicleta urbana verde con canasta, lista para alquilar" width="400">
+      <img class="img-fluid" src="img/bicicleta.jpg" alt="Bicicleta urbana verde con canasta, lista para alquilar" width="400">
 
       <article>
         <h3>Alquiler de bicicletas</h3>
@@ -176,7 +176,7 @@
 
       <article>
         <h3>Recorridos guiados</h3>
-        <img src="img/ruta.jpg" alt="Mapa de una ruta en bicicleta que recorre parques y ciclorrutas de Medellín" width="400">
+        <img class="img-fluid" src="img/ruta.jpg" alt="Mapa de una ruta en bicicleta que recorre parques y ciclorrutas de Medellín" width="400">
         <p>
           Recorre los lugares más representativos de Medellín con un guía local.
           Los grupos son de <strong>máximo 8 personas</strong> y hay rutas para todos los niveles, <em>desde principiantes hasta ciclistas con experiencia</em>.
@@ -220,14 +220,18 @@
   </main>
 
   <footer>
-    <div class="footer-section">
-      <p><strong>Rueda Libre</strong><br>&copy; 2026</p>
-    </div>
-    <address class="footer-section">
-      <p><strong>Contacto</strong><br><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
-    </address>
-    <div class="footer-section">
-      <p><strong>Horario</strong><br>Lun. a vie.: 7:00 a. m. a 7:00 p. m.<br>Fines de semana y festivos: 6:00 a. m. a 2:00 p. m.</p>
+    <div class="container py-4">
+      <div class="row gy-3">
+        <div class="col-12 col-md-4">
+          <p class="mb-0"><strong>Rueda Libre</strong><br>&copy; 2026</p>
+        </div>
+        <address class="col-12 col-md-4 mb-0">
+          <p class="mb-0"><strong>Contacto</strong><br><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+        </address>
+        <div class="col-12 col-md-4">
+          <p class="mb-0"><strong>Horario</strong><br>Lun. a vie.: 7:00 a. m. a 7:00 p. m.<br>Fines de semana y festivos: 6:00 a. m. a 2:00 p. m.</p>
+        </div>
+      </div>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

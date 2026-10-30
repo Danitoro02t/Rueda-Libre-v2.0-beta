@@ -5,142 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Reserva tu bicicleta o recorrido guiado con Rueda Libre en Medellín mediante el formulario de reservas.">
   <title>Reservas | Rueda Libre - Bicicletas en Medellín</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="header-layout">
-      <div class="brand">
-        <img src="../img/logo.jpg" alt="Logo de Rueda Libre: una bicicleta blanca dentro de un círculo verde" width="100">
-        <h1>Reserva tu bicicleta</h1>
+  <header class="py-3">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <div class="brand d-flex flex-column flex-md-row align-items-center gap-2">
+        <img class="flex-shrink-0" src="../img/logo.jpg" alt="Logo de Rueda Libre: una bicicleta blanca dentro de un círculo verde" width="64" height="64">
+        <h1 class="fs-4 fw-bold text-center text-md-start mb-0">Reserva tu bicicleta</h1>
       </div>
-      <nav aria-label="Navegación principal">
-        <ul id="menu">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="tarifas.html">Tarifas y rutas</a></li>
-          <li><a href="reservas.html" class="activo" aria-current="page">Reservas</a></li>
+      <nav class="flex-grow-1" aria-label="Navegación principal">
+        <ul id="menu" class="nav justify-content-center justify-content-md-end flex-wrap gap-2">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="tarifas.html">Tarifas y rutas</a></li>
+          <li class="nav-item"><a class="nav-link activo" href="reservas.html" aria-current="page">Reservas</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <div class="booking-layout">
-      <section id="formulario-reserva">
-        <h2>Formulario de reserva</h2>
+  <main class="container py-4">
+    <div class="row g-4 align-items-start">
+      <section id="formulario-reserva" class="col-12 col-md-8">
+        <h2 class="mb-3">Formulario de reserva</h2>
         <form action="reservas.html" method="post">
-          <fieldset>
+          <fieldset class="mb-4">
             <legend>Tus datos</legend>
-
-            <p>
-              <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" required minlength="3">
-            </p>
-            <div class="form-row">
-              <div class="form-field">
-                <p>
-                  <label for="documento">Número de documento</label>
-                  <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Escribe solo números: entre 6 y 10 dígitos." aria-describedby="ayuda-documento">
-                </p>
-                <p id="ayuda-documento">Solo números, entre 6 y 10 dígitos.</p>
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label" for="nombre">Nombre completo</label>
+                <input class="form-control" type="text" id="nombre" name="nombre" required minlength="3">
               </div>
-              <div class="form-field">
-                <p>
-                  <label for="celular">Celular</label>
-                  <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" title="Escribe 10 dígitos y comienza por 3, por ejemplo 3001234567." aria-describedby="ayuda-celular">
-                </p>
-                <p id="ayuda-celular">10 dígitos, debe empezar por 3. Ejemplo: 3001234567.</p>
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="documento">Número de documento</label>
+                <input class="form-control" type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Escribe solo números: entre 6 y 10 dígitos." aria-describedby="ayuda-documento">
+                <div class="form-text" id="ayuda-documento">Solo números, entre 6 y 10 dígitos.</div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="celular">Celular</label>
+                <input class="form-control" type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" title="Escribe 10 dígitos y comienza por 3, por ejemplo 3001234567." aria-describedby="ayuda-celular">
+                <div class="form-text" id="ayuda-celular">10 dígitos, debe empezar por 3. Ejemplo: 3001234567.</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="correo">Correo electrónico</label>
+                <input class="form-control" type="email" id="correo" name="correo" required>
               </div>
             </div>
-            <p>
-              <label for="correo">Correo electrónico</label>
-              <input type="email" id="correo" name="correo" required>
-            </p>
           </fieldset>
 
-          <fieldset>
+          <fieldset class="mb-4">
             <legend>Tu alquiler</legend>
-
-            <p>
-              <label for="fecha">Fecha del alquiler</label>
-              <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31" aria-describedby="ayuda-fecha">
-            </p>
-            <p id="ayuda-fecha">Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.</p>
-
-            <fieldset>
-              <legend>Tipo de bicicleta</legend>
-              <p>
-                <input type="radio" id="bicicleta-urbana" name="tipo-bicicleta" value="urbana" required>
-                <label for="bicicleta-urbana">Urbana</label>
-              </p>
-              <p>
-                <input type="radio" id="bicicleta-montana" name="tipo-bicicleta" value="montana">
-                <label for="bicicleta-montana">Montaña</label>
-              </p>
-              <p>
-                <input type="radio" id="bicicleta-electrica" name="tipo-bicicleta" value="electrica">
-                <label for="bicicleta-electrica">Eléctrica</label>
-              </p>
-            </fieldset>
-
-            <p>
-              <label for="plan">Plan</label>
-              <select id="plan" name="plan" required>
-                <option value="" selected disabled>Selecciona un plan</option>
-                <option value="1-hora">1 hora</option>
-                <option value="medio-dia">Medio día</option>
-                <option value="dia-completo">Día completo</option>
-              </select>
-            </p>
-            <p>
-              <label for="cantidad">Cantidad de bicicletas</label>
-              <input type="number" id="cantidad" name="cantidad" required min="1" max="6">
-            </p>
-            <p>
-              <label for="recorrido">Recorrido guiado</label>
-              <select id="recorrido" name="recorrido">
-                <option value="ninguno">Ninguno</option>
-                <option value="rio-y-parques">Río y Parques</option>
-                <option value="sabores-de-barrio">Sabores de Barrio</option>
-                <option value="reto-las-palmas">Reto Las Palmas</option>
-              </select>
-            </p>
-            <p>
-              <label for="comentarios">Comentarios</label>
-              <textarea id="comentarios" name="comentarios" rows="4" cols="40" maxlength="300"></textarea>
-            </p>
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="fecha">Fecha del alquiler</label>
+                <input class="form-control" type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31" aria-describedby="ayuda-fecha">
+                <div class="form-text" id="ayuda-fecha">Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.</div>
+              </div>
+              <fieldset class="col-12 border-0 p-0">
+                <legend class="fs-6 fw-semibold mb-2">Tipo de bicicleta</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="bicicleta-urbana" name="tipo-bicicleta" value="urbana" required>
+                  <label class="form-check-label" for="bicicleta-urbana">Urbana</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="bicicleta-montana" name="tipo-bicicleta" value="montana">
+                  <label class="form-check-label" for="bicicleta-montana">Montaña</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="bicicleta-electrica" name="tipo-bicicleta" value="electrica">
+                  <label class="form-check-label" for="bicicleta-electrica">Eléctrica</label>
+                </div>
+              </fieldset>
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="plan">Plan</label>
+                <select class="form-select" id="plan" name="plan" required>
+                  <option value="" selected disabled>Selecciona un plan</option>
+                  <option value="1-hora">1 hora</option>
+                  <option value="medio-dia">Medio día</option>
+                  <option value="dia-completo">Día completo</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="cantidad">Cantidad de bicicletas</label>
+                <input class="form-control" type="number" id="cantidad" name="cantidad" required min="1" max="6">
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="form-label" for="recorrido">Recorrido guiado</label>
+                <select class="form-select" id="recorrido" name="recorrido">
+                  <option value="ninguno">Ninguno</option>
+                  <option value="rio-y-parques">Río y Parques</option>
+                  <option value="sabores-de-barrio">Sabores de Barrio</option>
+                  <option value="reto-las-palmas">Reto Las Palmas</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="comentarios">Comentarios</label>
+                <textarea class="form-control" id="comentarios" name="comentarios" rows="4" maxlength="300"></textarea>
+              </div>
+            </div>
           </fieldset>
 
-          <fieldset>
+          <fieldset class="mb-4">
             <legend>Confirmación</legend>
-            <p>
-              <input type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
-              <label for="politicas">Acepto las políticas de alquiler</label>
-            </p>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
+              <label class="form-check-label" for="politicas">Acepto las políticas de alquiler</label>
+            </div>
           </fieldset>
 
           <button type="submit" name="enviar" value="reserva">Enviar reserva</button>
         </form>
       </section>
 
-      <aside class="booking-info">
-        <section id="contacto">
-          <h2>Contacto</h2>
-          <p>
+      <aside class="booking-info col-12 col-md-4 p-3">
+        <section id="contacto" class="mb-4">
+          <h2 class="fs-4 mb-2">Contacto</h2>
+          <p class="mb-0">
             Si tienes preguntas sobre tu reserva, escríbenos a
             <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.
           </p>
         </section>
         <section id="horario">
-          <h2>Horario de atención</h2>
-          <dl>
+          <h2 class="fs-4 mb-2">Horario de atención</h2>
+          <dl class="mb-0">
             <dt>Lunes a viernes</dt>
             <dd>7:00 a. m. a 7:00 p. m.</dd>
             <dt>Sábados, domingos y festivos</dt>
-            <dd>6:00 a. m. a 2:00 p. m.</dd>
+            <dd class="mb-0">6:00 a. m. a 2:00 p. m.</dd>
           </dl>
         </section>
       </aside>
@@ -148,14 +143,18 @@
   </main>
 
   <footer>
-    <div class="footer-section">
-      <p><strong>Rueda Libre</strong><br>&copy; 2026</p>
-    </div>
-    <address class="footer-section">
-      <p><strong>Contacto</strong><br><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
-    </address>
-    <div class="footer-section">
-      <p><strong>Horario</strong><br>Lun. a vie.: 7:00 a. m. a 7:00 p. m.<br>Fines de semana y festivos: 6:00 a. m. a 2:00 p. m.</p>
+    <div class="container py-4">
+      <div class="row gy-3">
+        <div class="col-12 col-md-4">
+          <p class="mb-0"><strong>Rueda Libre</strong><br>&copy; 2026</p>
+        </div>
+        <address class="col-12 col-md-4 mb-0">
+          <p class="mb-0"><strong>Contacto</strong><br><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+        </address>
+        <div class="col-12 col-md-4">
+          <p class="mb-0"><strong>Horario</strong><br>Lun. a vie.: 7:00 a. m. a 7:00 p. m.<br>Fines de semana y festivos: 6:00 a. m. a 2:00 p. m.</p>
+        </div>
+      </div>
     </div>
   </footer>
 </body>
