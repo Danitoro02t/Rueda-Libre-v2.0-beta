@@ -679,3 +679,35 @@ Dia 18 - 30/10/2026 - Beneficios y llamada a reservar con Bootstrap
   https://getbootstrap.com/docs/5.3/utilities/flex/
   https://getbootstrap.com/docs/5.3/utilities/display/
   https://getbootstrap.com/docs/5.3/utilities/colors/
+
+
+Dia 19 - 30/10/2026 - Grilla Bootstrap en la pagina de inicio
+
+1. Portada, rutas, flota y beneficios
+- Reemplace las distribuciones CSS propias de portada y rutas por filas
+  y columnas de Bootstrap. La flota usa `row`, `g-4` y columnas
+  `col-12 col-sm-6 col-lg-4`; precio y separacion interna de las
+  tarjetas tambien usan utilidades. Los beneficios usan
+  `col-12 col-sm-6 col-lg-3`.
+- Las tarjetas conservan fondos, bordes, imagenes, botones y colores de
+  marca. La pagina carga Bootstrap 5.3.8 antes de `css/styles.css` y
+  carga el bundle al final del documento.
+
+2. Tres conflictos de cascada revisados en DevTools
+- Bootstrap aplica tamaños propios a los encabezados. `.brand h1`
+  conserva la fuente Montserrat y el tamaño de marca definido en la
+  hoja propia; los títulos de beneficios fijan su tamaño con `fs-5`.
+- `h3, p { margin: 0 }` anulaba los margenes del Reboot de Bootstrap.
+  Las utilidades `mb-*` y `mt-*` declaran el espaciado requerido donde
+  se usan las nuevas grillas, sin `!important`.
+- El selector propio `a` compite con el azul predeterminado de los
+  enlaces Bootstrap. Al estar la hoja propia despues de Bootstrap,
+  prevalece el verde de marca; `a:hover` conserva el color de
+  interaccion de Rueda Libre.
+
+3. Prueba responsive
+- Revise inicio en modo dispositivo a 360, 768 y 1280 px. La portada
+  pasa de una a dos columnas desde md; flota y beneficios pasan de una
+  a dos desde sm; rutas pasan de una a dos desde md. A 1280 px la flota
+  y rutas tienen tres columnas y beneficios cuatro. No hay
+  desbordamiento horizontal.

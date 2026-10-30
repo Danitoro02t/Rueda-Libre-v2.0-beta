@@ -117,7 +117,8 @@ header nav {
   width: 100%;
 }
 
-main {
+/* Espaciado de las paginas de tarifas y reservas, sin contenedor Bootstrap. */
+main:not(.container) {
   padding: var(--space-md);
 }
 
@@ -146,32 +147,7 @@ footer address {
 /* ==========================================================================
    4. COMPONENTES Y SECCIONES
    ========================================================================= */
-/* Hero */
-.hero-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: center;
-  gap: var(--space-lg);
-  padding: var(--space-lg) 0;
-}
-
-.hero-image {
-  width: 100%;
-  border-radius: 0.75rem;
-  object-fit: cover;
-}
-
-/* Rutas */
-.route-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-md);
-}
-
 .route-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
   padding: var(--space-md);
   border: 1px solid var(--color-gris-asfalto);
   border-radius: 0.75rem;
@@ -188,10 +164,6 @@ footer address {
 /* Flota de Bicicletas */
 .bike-card {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: var(--space-sm);
   padding: var(--space-md);
   border: 1px solid var(--color-gris-asfalto);
   border-radius: 0.75rem;
@@ -205,19 +177,7 @@ footer address {
   object-fit: cover;
 }
 
-.bike-price {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-sm);
-}
-
-.bike-card .cta {
-  align-self: flex-start;
-  margin-top: auto;
-}
-
-/* Reservas y Formularios */
+/* Distribucion propia que todavia usa la pagina de reservas. */
 .booking-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -444,14 +404,7 @@ button:focus,
     flex: 1 1 12rem;
   }
 
-  .hero-layout {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .route-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+  /* Reglas responsive propias que todavia usan tarifas y reservas. */
   .form-row {
     flex-direction: row;
     gap: var(--space-md);
@@ -472,13 +425,21 @@ button:focus,
 }
 
 @media (min-width: 1200px) {
-  .route-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .booking-layout {
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   }
+}
+
+.benefit-card h3 {
+  color: var(--color-azul-noche);
+}
+
+.benefit-description {
+  color: var(--color-gris-asfalto);
+}
+
+.benefit-highlight {
+  color: var(--color-verde-ruta);
 }
 
 .bici {
