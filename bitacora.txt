@@ -649,3 +649,33 @@ Dia 17 - 30/10/2026 - Prueba responsive de la flota con Bootstrap 5.3
 
 
 url: https://danitoro02t.github.io/Rueda-Libre-v0.2/index.html
+
+
+Dia 18 - 30/10/2026 - Beneficios y llamada a reservar con Bootstrap
+
+1. Seccion de beneficios y franja final
+- Debajo de la flota de `pruebas/catalogo-bootstrap.html` agregue
+  "¿Por qué Rueda Libre?" con cuatro beneficios: bicicletas revisadas
+  en cada alquiler, casco y candado incluidos, guias certificados y
+  devolucion en tres sedes.
+- Distribui los beneficios con la grilla de Bootstrap: una columna en
+  celular, dos desde sm y cuatro desde lg. La franja "¿Listo para
+  rodar?" cambia de columna a fila desde md; la imagen decorativa del
+  ciclista se oculta en celular.
+- No agregue CSS, estilos en linea ni clases propias para estas dos
+  secciones. Use utilidades Bootstrap 5.3 y el enlace de reservas.
+
+2. Cinco clases consultadas en la documentacion oficial
+- `py-5`: agrega padding vertical con el quinto valor de espaciado.
+- `gap-4`: establece espacio entre elementos de una grilla o flex.
+- `flex-md-row`: coloca los elementos en fila desde el breakpoint md.
+- `d-none`: oculta el elemento; se combina con `d-md-block` para
+  mostrar la imagen desde md.
+- `text-bg-success`: aplica el color de texto y el fondo asociados a
+  success, para destacar el enlace.
+- Consulte las utilidades de espaciado, flex, display y color en el
+  buscador y las paginas oficiales de Bootstrap 5.3:
+  https://getbootstrap.com/docs/5.3/utilities/spacing/
+  https://getbootstrap.com/docs/5.3/utilities/flex/
+  https://getbootstrap.com/docs/5.3/utilities/display/
+  https://getbootstrap.com/docs/5.3/utilities/colors/
