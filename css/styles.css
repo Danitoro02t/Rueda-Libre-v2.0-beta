@@ -1,0 +1,494 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================================================= */
+:root {
+  --color-verde-ruta: #1F7A4E;
+  --color-naranja-pedal: #ED9D22;
+  --color-azul-noche: #152236;
+  --color-gris-asfalto: #5D636D;
+  --color-crema: #F9F6F1;
+  --color-blanco: #FFFFFF;
+
+  --font-heading: 'Montserrat', Arial, sans-serif;
+  --font-body: 'Open Sans', Arial, sans-serif;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+}
+
+/* ==========================================================================
+   2. ESTILOS BASE Y TIPOGRAFÍA
+   ========================================================================= */
+body {
+  margin: 0;
+  color: var(--color-azul-noche);
+  background-color: var(--color-crema);
+  font-family: var(--font-body);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin: 0;
+}
+
+h3, p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-verde-ruta);
+  text-decoration: none;
+}
+
+aside {
+  color: var(--color-gris-asfalto);
+}
+
+th {
+  color: var(--color-blanco);
+  background-color: var(--color-verde-ruta);
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+caption {
+  margin-bottom: var(--space-sm);
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  padding: 0.35rem 0.2rem;
+  border: 1px solid var(--color-gris-asfalto);
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+table tr > :first-child {
+  width: 30%;
+}
+
+/* ==========================================================================
+   3. LAYOUT GENERAL (Estructura de la Página)
+   ========================================================================= */
+header {
+  padding: var(--space-md);
+  color: var(--color-blanco);
+  background-color: var(--color-verde-ruta);
+}
+
+.header-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.brand img {
+  width: 4rem;
+}
+
+.brand h1 {
+  margin: 0;
+  color: var(--color-blanco);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+header nav {
+  width: 100%;
+}
+
+main {
+  padding: var(--space-md);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-md);
+  color: var(--color-blanco);
+  background-color: var(--color-azul-noche);
+}
+
+footer address {
+  margin: 0;
+  font-style: normal;
+}
+
+.footer-section {
+  flex: 0 1 auto;
+}
+
+.footer-section p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. COMPONENTES Y SECCIONES
+   ========================================================================= */
+/* Hero */
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg) 0;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Rutas */
+.route-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+}
+
+.route-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--color-gris-asfalto);
+  border-radius: 0.75rem;
+  background-color: var(--color-blanco);
+}
+
+.route-card img {
+  width: 100%;
+  height: 12rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+/* Flota de Bicicletas */
+.bike-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--color-gris-asfalto);
+  border-radius: 0.75rem;
+  background-color: var(--color-blanco);
+}
+
+.bike-card img {
+  width: 100%;
+  height: 11rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.bike-price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.bike-card .cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Reservas y Formularios */
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.booking-info {
+  padding: var(--space-md);
+  border-radius: 0.75rem;
+  background-color: var(--color-blanco);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.form-field {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+}
+
+.form-field p {
+  margin-top: 0;
+}
+
+#formulario-reserva fieldset {
+  margin-bottom: var(--space-md);
+}
+
+#formulario-reserva > form > fieldset > p > label,
+.form-field label {
+  display: block;
+}
+
+#formulario-reserva input[type="checkbox"] + label {
+  display: inline;
+}
+
+#formulario-reserva input:not([type="radio"]):not([type="checkbox"]),
+#formulario-reserva select,
+#formulario-reserva textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* ==========================================================================
+   5. NAVEGACIÓN (#menu)
+   ========================================================================= */
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  background-color: transparent; /* Fondo transparente para integrarse con el header */
+  list-style: none;
+}
+
+#menu li {
+  margin: 0;
+}
+
+#menu a {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-blanco); /* Enlaces blancos sobre la barra verde */
+  text-decoration: none;
+  font-family: var(--font-body);
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#menu a.activo {
+  color: var(--color-blanco);
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 0.15em;
+  text-underline-offset: 0.2em;
+}
+
+#menu a:hover,
+#menu a:focus {
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
+}
+
+/* ==========================================================================
+   6. INTERACTIVIDAD, BOTONES Y FORMULARIOS (Estados Hover / Focus)
+   ========================================================================= */
+.cta,
+button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cta:hover,
+.cta:focus,
+button:hover {
+  color: var(--color-blanco);
+  background-color: var(--color-verde-ruta);
+}
+
+.cta:hover:focus,
+button:hover:focus {
+  outline-color: var(--color-blanco);
+  outline-offset: -3px;
+}
+
+input,
+select,
+textarea {
+  color: var(--color-azul-noche);
+  background-color: var(--color-blanco);
+  font-family: var(--font-body);
+  border: 1px solid var(--color-gris-asfalto);
+  padding: var(--space-sm);
+  border-radius: 4px;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--color-verde-ruta);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--color-verde-ruta);
+  outline-offset: 2px;
+}
+
+form p:focus-within {
+  outline: 3px solid var(--color-verde-ruta);
+  outline-offset: 2px;
+}
+
+/* Enlaces generales en cabecera y pie */
+header a {
+  color: var(--color-blanco);
+}
+
+footer a {
+  color: var(--color-blanco);
+}
+
+a:hover {
+  color: var(--color-azul-noche);
+}
+
+footer a:hover {
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
+  text-decoration: underline;
+}
+
+footer a:focus {
+  color: var(--color-azul-noche);
+  background-color: var(--color-naranja-pedal);
+  outline-color: var(--color-blanco);
+}
+
+a:focus,
+button:focus,
+#menu a:focus {
+  outline: 3px solid var(--color-azul-noche);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES (Diseño Mobile-first)
+   ========================================================================= */
+@media (min-width: 768px) {
+  .header-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .brand {
+    flex-direction: row;
+  }
+
+  .brand img {
+    width: 100px;
+  }
+
+  .brand h1 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  header nav {
+    flex: 1 1 20rem;
+    min-width: 0;
+  }
+
+  #menu {
+    justify-content: flex-end;
+  }
+
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-section {
+    flex: 1 1 12rem;
+  }
+
+  .hero-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-row {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+
+  .form-field {
+    width: auto;
+  }
+
+  table {
+    font-size: 1rem;
+  }
+
+  th,
+  td {
+    padding: var(--space-sm);
+  }
+}
+
+@media (min-width: 1200px) {
+  .route-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .booking-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+
+.bici {
+  height: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: var(--color-blanco);
+}
+
+.precio {
+  color: var(--color-verde-ruta);
+  font-weight: 700;
+}

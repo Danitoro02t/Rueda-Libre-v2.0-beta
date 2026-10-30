@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rueda Libre: alquiler de bicicletas, recorridos guiados y taller básico en Medellín. Reserva fácil por WhatsApp.">
+  <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-layout">
+      <div class="brand">
+        <img src="img/logo.jpg" alt="Logo de Rueda Libre: una bicicleta blanca dentro de un círculo verde" width="100">
+        <h1>Rueda Libre</h1>
+      </div>
+      <nav aria-label="Navegación principal">
+        <ul id="menu">
+          <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
+          <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
+          <li><a href="paginas/reservas.html">Reservas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="portada" class="hero-layout">
+      <div class="hero-copy">
+        <h2>Pedalea Medellín a tu ritmo</h2>
+        <p>
+          Alquila tu bicicleta y descubre la ciudad con rutas guiadas para todos los niveles.
+          Nos encargamos del casco y el candado; tú eliges el camino.
+        </p>
+        <a class="cta" href="paginas/reservas.html">Reserva tu bicicleta</a>
+      </div>
+      <img class="hero-image" src="img/portada.jpg" alt="Ciclista pedaleando por una calle de Medellín con las montañas de fondo" width="800">
+    </section>
+
+    <section id="rutas">
+      <h2>Nuestras rutas</h2>
+      <div class="route-grid">
+        <article class="route-card">
+          <img src="img/ruta.jpg" alt="Mapa de la ruta Río y Parques por Medellín" width="400">
+          <h3>Río y Parques</h3>
+          <p>Nivel: Fácil</p>
+        </article>
+        <article class="route-card">
+          <img src="img/ruta.jpg" alt="Mapa de la ruta Sabores de Barrio por Medellín" width="400">
+          <h3>Sabores de Barrio</h3>
+          <p>Nivel: Medio</p>
+        </article>
+        <article class="route-card">
+          <img src="img/ruta.jpg" alt="Mapa del reto Las Palmas en Medellín" width="400">
+          <h3>Reto Las Palmas</h3>
+          <p>Nivel: Difícil</p>
+        </article>
+      </div>
+      <p><a href="paginas/tarifas.html#recorridos">Consulta precios y horarios de las rutas</a></p>
+    </section>
+
+    <section id="quienes-somos">
+      <h2>¿Quiénes somos?</h2>
+      <p>
+        Somos un emprendimiento de Medellín dedicado al alquiler de bicicletas y a los recorridos guiados por la ciudad.
+        Queremos que más personas se muevan en bici, de forma <em>segura y sin complicaciones</em>.
+        Si quieres visitarnos, mira cómo llegar en la sección <a href="#encuentranos">Encuéntranos</a>.
+      </p>
+    </section>
+
+    <section id="flota">
+      <h2>Nuestra flota</h2>
+      <div class="row g-4">
+        <article class="bike-card col-12 col-md-6 col-lg-4">
+          <img src="img/bicicleta.jpg" alt="Bicicleta de alquiler de Rueda Libre" width="800" height="520">
+          <h3>Urbana Clásica</h3>
+          <p>Cómoda y liviana para las ciclorrutas.</p>
+          <p class="bike-price"><span>Precio por hora</span><strong>$10.000</strong></p>
+          <a class="cta" href="paginas/reservas.html">Reservar</a>
+        </article>
+        <article class="bike-card col-12 col-md-6 col-lg-4">
+          <img src="img/bicicleta.jpg" alt="Bicicleta de alquiler de Rueda Libre" width="800" height="520">
+          <h3>Urbana Plegable</h3>
+          <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+          <p class="bike-price"><span>Precio por hora</span><strong>$12.000</strong></p>
+          <a class="cta" href="paginas/reservas.html">Reservar</a>
+        </article>
+        <article class="bike-card col-12 col-md-6 col-lg-4">
+          <img src="img/bicicleta.jpg" alt="Bicicleta de alquiler de Rueda Libre" width="800" height="520">
+          <h3>Montaña Trail</h3>
+          <p>Suspensión delantera y 21 cambios para las subidas.</p>
+          <p class="bike-price"><span>Precio por hora</span><strong>$15.000</strong></p>
+          <a class="cta" href="paginas/reservas.html">Reservar</a>
+        </article>
+        <article class="bike-card col-12 col-md-6 col-lg-4">
+          <img src="img/bicicleta.jpg" alt="Bicicleta de alquiler de Rueda Libre" width="800" height="520">
+          <h3>Gravel Aventura</h3>
+          <p>Para rutas mixtas de asfalto y destapado.</p>
+          <p class="bike-price"><span>Precio por hora</span><strong>$18.000</strong></p>
+          <a class="cta" href="paginas/reservas.html">Reservar</a>
+        </article>
+        <article class="bike-card col-12 col-md-6 col-lg-4">
+          <img src="img/bicicleta.jpg" alt="Bicicleta de alquiler de Rueda Libre" width="800" height="520">
+          <h3>Eléctrica Urbana</h3>
+          <p>Asistencia eléctrica con 45 km de autonomía.</p>
+          <p class="bike-price"><span>Precio por hora</span><strong>$25.000</strong></p>
+          <a class="cta" href="paginas/reservas.html">Reservar</a>
+        </article>
+        <article class="bike-card col-12 col-md-6 col-lg-4">
+          <img src="img/bicicleta.jpg" alt="Bicicleta de alquiler de Rueda Libre" width="800" height="520">
+          <h3>Infantil</h3>
+          <p>Para niños de 6 a 10 años.</p>
+          <p class="bike-price"><span>Precio por hora</span><strong>$8.000</strong></p>
+          <a class="cta" href="paginas/reservas.html">Reservar</a>
+        </article>
+        <article class="bike-card col-12 col-md-6 col-lg-4">
+          <img src="img/bicicleta.jpg" alt="Bicicleta de alquiler de Rueda Libre" width="800" height="520">
+          <h3>Tándem</h3>
+          <p>Para dos personas; perfecta para pasear en pareja.</p>
+          <p class="bike-price"><span>Precio por hora</span><strong>$20.000</strong></p>
+          <a class="cta" href="paginas/reservas.html">Reservar</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <h2>Nuestros servicios</h2>
+      <img src="img/bicicleta.jpg" alt="Bicicleta urbana verde con canasta, lista para alquilar" width="400">
+
+      <article>
+        <h3>Alquiler de bicicletas</h3>
+        <p>
+          Alquila una bicicleta por horas o por días para moverte por la ciudad a tu ritmo.
+          Todas las bicicletas <strong>incluyen casco y candado</strong> sin costo adicional.
+        </p>
+      </article>
+
+      <article>
+        <h3>Recorridos guiados</h3>
+        <img src="img/ruta.jpg" alt="Mapa de una ruta en bicicleta que recorre parques y ciclorrutas de Medellín" width="400">
+        <p>
+          Recorre los lugares más representativos de Medellín con un guía local.
+          Los grupos son de <strong>máximo 8 personas</strong> y hay rutas para todos los niveles, <em>desde principiantes hasta ciclistas con experiencia</em>.
+          Consulta los <a href="paginas/tarifas.html#recorridos">precios y horarios de los recorridos</a>.
+        </p>
+      </article>
+
+      <article>
+        <h3>Taller básico</h3>
+        <p>
+          Revisamos frenos, cadena y llantas de tu propia bicicleta.
+          El <strong>ajuste básico está listo el mismo día</strong>, <em>siempre que haya repuestos disponibles</em>.
+        </p>
+      </article>
+
+      <section>
+        <h3>¿Por qué alquilar con nosotros?</h3>
+        <ul>
+          <li>Casco y candado incluidos en cada alquiler.</li>
+          <li>Bicicletas revisadas antes de cada salida.</li>
+          <li>Reserva rápida por WhatsApp o correo.</li>
+        </ul>
+      </section>
+      <p><a href="paginas/tarifas.html">Ver todas nuestras tarifas</a></p>
+      <p><a class="cta" href="paginas/reservas.html">Reservar ahora</a></p>
+    </section>
+
+    <section id="como-alquilar">
+      <h2>¿Cómo alquilar?</h2>
+      <ol>
+        <li>Escríbenos por WhatsApp o correo con la fecha y la hora que quieres.</li>
+        <li>Elige el tipo de bicicleta y por cuánto tiempo la necesitas.</li>
+        <li>Presenta tu documento de identidad al recogerla.</li>
+        <li>Recibe tu casco y candado, ¡y a rodar!</li>
+      </ol>
+    </section>
+
+    <section id="encuentranos">
+      <h2>Encuéntranos</h2>
+      <p>Estamos en Medellín, Antioquia.</p>
+      <p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Medell%C3%ADn%2C+Antioquia" target="_blank" rel="noopener">Ver ubicación en Google Maps</a>
+      </p>
+      <p>
+        Escríbenos a <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
+        o <a href="https://wa.me/570000000000" target="_blank" rel="noopener">reserva por WhatsApp</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-section">
+      <p><strong>Rueda Libre</strong><br>&copy; 2026</p>
+    </div>
+    <address class="footer-section">
+      <p><strong>Contacto</strong><br><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+    </address>
+    <div class="footer-section">
+      <p><strong>Horario</strong><br>Lun. a vie.: 7:00 a. m. a 7:00 p. m.<br>Fines de semana y festivos: 6:00 a. m. a 2:00 p. m.</p>
+    </div>
+  </footer>
+</body>
+</html>
