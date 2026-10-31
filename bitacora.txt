@@ -778,3 +778,71 @@ Dia 20 - 30/10/2026 - Migracion final de tarifas y reservas a Bootstrap
   hacerlo requiere subir los cambios al repositorio, lo que necesita
   un commit, y la instruccion fue trabajar sin commit. Por tanto, la
   URL queda pendiente de publicacion y no se presenta como activa.
+
+
+Dia 21 - 30/10/2026 - Cierre semanal: identidad Rueda Libre v2.0
+
+1. Personalizacion con Bootstrap
+- Sobrescribi despues de Bootstrap las variables `--bs-primary`,
+  `--bs-primary-rgb`, `--bs-body-font-family`, `--bs-link-color` y
+  `--bs-border-radius`, ademas del color de texto y los estados de
+  validacion. Verde Ruta ahora alimenta botones primarios y utilidades
+  `text-primary`/`bg-primary`; Naranja Pedal tiene la variante
+  complementaria `.btn-pedal` con texto Azul Noche.
+- Agregue las clases propias `.hero-section`, `.section-heading`,
+  `.site-footer`, `.benefit-icon` y `.alert-brand` como complemento de
+  la grilla/utilidades Bootstrap. No modifique el CSS del framework ni
+  agregue reglas `!important`.
+- Unifique los CTA del sitio en `btn-primary`, los enlaces secundarios
+  en `btn-outline-primary` y reserve el boton naranja para acciones
+  complementarias. La navegacion, la portada, las tarjetas, los
+  beneficios, contacto y reservas usan Bootstrap Icons por CDN.
+- Los iconos decorativos tienen `aria-hidden="true"`; controles de
+  icono conservan nombre accesible. El texto y el fondo de las leyendas
+  del carrusel son opacos para mantener su contraste sobre las fotos.
+- Conflicto de cascada resuelto: las variables globales permiten que
+  `text-primary` y `bg-primary` tomen Verde Ruta, mientras que las
+  variables `--bs-btn-*` de componente controlan por separado hover y
+  active de botones verde y naranja. Los estilos propios siguen
+  despues de Bootstrap.
+
+2. Pruebas responsive, teclado y contraste
+- Revise Inicio, Tarifas y Reservas en navegador a 360, 768 y 1280 px.
+  No hay desbordamiento horizontal; las tres hojas cargan Bootstrap
+  antes de `css/styles.css`, los iconos cargan y cada pagina incluye el
+  bundle una sola vez.
+- Verifique contraste WCAG AA para texto normal: Verde Ruta sobre
+  crema 4.93:1; blanco sobre Verde Ruta 5.31:1; Azul Noche sobre
+  Naranja Pedal 7.19:1; sobre naranja en hover 5.71:1 y en active
+  4.68:1; Azul Noche sobre crema 14.83:1; gris de texto sobre crema
+  5.61:1; error de formulario sobre crema 6.03:1. Blanco sobre el fondo
+  verde oscurecido de la navegacion activa alcanza 7.35:1.
+- Teclado: recorri navbar y CTA con Tab, active el menu colapsable con
+  Enter, lo cerre desde el teclado y abri y cerre el modal con Enter y
+  Escape. No hay botones icon-only sin etiqueta accesible.
+
+3. Comparativa y capturas
+- Antes: [img/capturas/antes-identidad-v2.png](img/capturas/antes-identidad-v2.png)
+  muestra la pagina inicial antes de la personalizacion, a 1440x1450.
+- Despues: [img/capturas/despues-identidad-v2.png](img/capturas/despues-identidad-v2.png)
+  conserva el mismo ancho y alto, con iconos de navegacion y la paleta
+  aplicada. La portada ahora tiene fondo, jerarquia de encabezado y CTA
+  de marca. La base estructural Bootstrap se conserva; cambian la
+  identidad, la jerarquia de portada y los componentes de accion.
+
+4. Resumen de la semana y publicacion
+- Los MiniRetos 1-4 construyeron la base responsive con Flexbox, Grid
+  y CSS mobile-first; los retos 5-8 trasladaron las grillas al sistema
+  Bootstrap y compararon distribucion y codigo; los retos 9-11
+  integraron navbar, botones, cards, carrusel, validacion, alerta y
+  modal; el reto 12 cierra con variables de marca, clases propias,
+  iconos y pruebas de accesibilidad.
+- Resultado local: las tres paginas principales integran el mismo
+  sistema visual, responden en movil/tablet/escritorio y conservan sus
+  funciones previas. Las capturas antes/despues quedan en
+  `img/capturas/`.
+- No hice commit ni push por instruccion. GitHub Pages no se actualizo:
+  no se puede publicar este estado de trabajo sin subir los cambios.
+  Ademas, `gh api` no pudo consultar la configuracion porque esta
+  sesion de GitHub CLI no tiene autenticacion; la URL de v2.0 queda
+  pendiente de verificar/publicar y no se presenta como activa.

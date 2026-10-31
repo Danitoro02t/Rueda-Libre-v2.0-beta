@@ -10,6 +10,21 @@
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 2rem;
+
+  --bs-primary: var(--color-verde-ruta);
+  --bs-primary-rgb: 31, 122, 78;
+  --bs-body-color: var(--color-azul-noche);
+  --bs-body-bg: var(--color-crema);
+  --bs-body-font-family: var(--font-body);
+  --bs-secondary-color: var(--color-gris-asfalto);
+  --bs-secondary-color-rgb: 93, 99, 109;
+  --bs-link-color: var(--color-verde-ruta);
+  --bs-link-hover-color: var(--color-azul-noche);
+  --bs-border-radius: 0.75rem;
+  --bs-border-radius-sm: 0.5rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-form-invalid-color: #B02A37;
+  --bs-form-invalid-border-color: #B02A37;
 }
 
 body {
@@ -25,8 +40,14 @@ h3 {
 }
 
 a {
-  color: var(--color-verde-ruta);
+  color: var(--bs-link-color);
   text-decoration: none;
+}
+
+main a:not(.btn):hover {
+  color: var(--bs-link-hover-color);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 header {
@@ -36,6 +57,11 @@ header {
 
 .navbar-dark .navbar-brand {
   color: var(--color-blanco);
+}
+
+.navbar-brand .bi {
+  color: var(--color-naranja-pedal);
+  font-size: 1.4rem;
 }
 
 .navbar {
@@ -51,7 +77,7 @@ header {
 
 .navbar-dark .navbar-nav .nav-link.active {
   color: var(--color-blanco);
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.2);
   font-weight: 600;
   text-decoration: underline;
   text-decoration-thickness: 0.15em;
@@ -67,6 +93,14 @@ header {
 footer {
   color: var(--color-blanco);
   background-color: var(--color-azul-noche);
+}
+
+footer.site-footer {
+  border-top: 0.35rem solid var(--color-naranja-pedal);
+}
+
+footer.site-footer strong {
+  color: var(--color-naranja-pedal);
 }
 
 footer address {
@@ -123,6 +157,78 @@ table tr > :first-child {
 
 .benefit-highlight {
   color: var(--color-verde-ruta);
+}
+
+.benefit-icon {
+  color: var(--color-verde-ruta);
+}
+
+.hero-section {
+  padding: clamp(1.25rem, 4vw, 3rem);
+  overflow: hidden;
+  border: 1px solid rgba(31, 122, 78, 0.2);
+  border-radius: var(--bs-border-radius-lg);
+  background: linear-gradient(120deg, #F1F8F3, var(--color-crema) 72%);
+}
+
+.hero-section img {
+  box-shadow: 0 1rem 2rem rgba(21, 34, 54, 0.18);
+}
+
+.section-heading::after {
+  display: block;
+  width: 3rem;
+  height: 0.22rem;
+  margin-top: 0.45rem;
+  border-radius: 1rem;
+  background-color: var(--color-naranja-pedal);
+  content: "";
+}
+
+.section-heading.text-center::after {
+  margin-inline: auto;
+}
+
+.carousel-caption {
+  background-color: var(--color-azul-noche);
+}
+
+.btn-primary {
+  --bs-btn-color: var(--color-blanco);
+  --bs-btn-bg: var(--color-verde-ruta);
+  --bs-btn-border-color: var(--color-verde-ruta);
+  --bs-btn-hover-color: var(--color-blanco);
+  --bs-btn-hover-bg: #17613D;
+  --bs-btn-hover-border-color: #17613D;
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+  --bs-btn-active-color: var(--color-blanco);
+  --bs-btn-active-bg: #124C30;
+  --bs-btn-active-border-color: #124C30;
+  --bs-btn-disabled-color: var(--color-blanco);
+  --bs-btn-disabled-bg: var(--color-verde-ruta);
+  --bs-btn-disabled-border-color: var(--color-verde-ruta);
+}
+
+.btn-pedal {
+  --bs-btn-color: var(--color-azul-noche);
+  --bs-btn-bg: var(--color-naranja-pedal);
+  --bs-btn-border-color: var(--color-naranja-pedal);
+  --bs-btn-hover-color: var(--color-azul-noche);
+  --bs-btn-hover-bg: #D88914;
+  --bs-btn-hover-border-color: #D88914;
+  --bs-btn-focus-shadow-rgb: 237, 157, 34;
+  --bs-btn-active-color: var(--color-azul-noche);
+  --bs-btn-active-bg: #C8780D;
+  --bs-btn-active-border-color: #C8780D;
+  --bs-btn-disabled-color: var(--color-azul-noche);
+  --bs-btn-disabled-bg: var(--color-naranja-pedal);
+  --bs-btn-disabled-border-color: var(--color-naranja-pedal);
+}
+
+.alert-brand {
+  color: var(--color-azul-noche);
+  border-color: var(--color-verde-ruta);
+  background-color: #F1F8F3;
 }
 
 input:not([type="checkbox"]):not([type="radio"]),
