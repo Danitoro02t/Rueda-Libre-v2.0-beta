@@ -900,3 +900,49 @@ Dia 23 - 03/11/2026 - CLI de Tailwind y variantes de botones
   y "Consultar disponibilidad". Los tres mostraron su anillo de foco;
   tambien confirme en navegador que el hover cambia el color del boton
   principal.
+
+Dia 23 - 03/11/2026 - Kit de componentes para Rueda Nocturna
+
+1. Comparacion de enfoques
+- Bootstrap ofrece componentes listos con estilos predeterminados y una
+  personalizacion apoyada en variables/clases. Tailwind usa utilidades
+  pequenas aplicadas directamente al HTML; permite mantener el mismo
+  patron visual compartiendo clases como `rounded-2xl`, `p-6`,
+  `bg-slate-900` y `text-slate-100`.
+- La nueva pagina reutiliza el enfoque utility-first de Tailwind ya
+  aplicado en `nocturna/index.html`, sin CDN ni CSS adicional en linea.
+
+2. Componentes y verificacion de clases
+- Cree `nocturna/componentes.html` con los botones principal,
+  secundario y contorno, la card "Luces del Centro", alertas de
+  informacion, exito y advertencia, y campos etiquetados de correo y
+  celular.
+- La alerta de exito usa `role="alert"`. Cada campo tiene etiqueta
+  asociada mediante `for`/`id`, texto de ayuda asociado con
+  `aria-describedby` y anillo de foco visible. Los botones son controles
+  nativos operables por teclado.
+- Tailwind CLI escanea `componentes.html` y genera las utilidades que
+  aparecen en sus clases, incluidas `hover:` y `focus:`. Se comprobo
+  que las clases de botones, alertas y campos estan en `src/output.css`.
+- Verificacion local en navegador: `output.css` carga sin error y al
+  recorrer con Tab aparece el anillo de foco; el arbol accesible reconoce
+  la alerta de exito como `alert` y nombra ambos campos.
+
+3. Reglas del kit
+- Radio: `rounded-2xl` en paneles, card, alertas, botones y campos.
+- Espaciado: escala de 4 px de Tailwind; se usan pasos 1, 2, 3, 4, 6 y
+  8 para padding, separacion y ritmo vertical.
+- Paleta compartida: fondo `slate-950`, superficies `slate-900`, texto
+  claro y acento `amber`; `sky`, `emerald` y `amber` distinguen los
+  estados informativo, exitoso y de advertencia.
+- Tipografia sans serif con jerarquia por tamanos y pesos; bordes
+  `slate-700` para superficies y bordes semanticos para alertas; sombras
+  `shadow-lg` y hover `shadow-2xl` en la card.
+
+4. Publicacion
+- La URL esperada
+  `https://danitoro02t.github.io/Rueda-Libre-v2.0/nocturna/componentes.html`
+  y la ruta publica de `nocturna/src/output.css` responden 404 al
+  verificarlas. `gh` no esta autenticado en esta sesion, por lo que no
+  fue posible configurar o actualizar GitHub Pages; la publicacion queda
+  pendiente de autenticacion y subida de estos cambios.

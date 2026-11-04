@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kit de componentes de Rueda Nocturna: botones, card, alertas y campos de formulario."
+    />
+    <title>Kit de componentes | Rueda Nocturna</title>
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-slate-950 p-4 font-sans text-slate-100 sm:p-8">
+    <main class="mx-auto w-full max-w-3xl space-y-8">
+      <header class="space-y-4">
+        <a
+          href="./index.html"
+          class="inline-flex rounded-2xl text-sm font-semibold text-amber-300 underline decoration-amber-300/50 underline-offset-4 transition-colors hover:text-amber-200 focus:outline-none focus:ring-4 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-slate-950"
+        >Volver a Rueda Nocturna</a>
+        <div class="space-y-2">
+          <p class="text-sm font-bold uppercase tracking-widest text-amber-300">
+            Sistema visual
+          </p>
+          <h1 class="text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            Kit de componentes
+          </h1>
+          <p class="text-lg leading-relaxed text-slate-300">
+            Piezas reutilizables para explorar Medellín en bici cuando se
+            encienden las luces.
+          </p>
+        </div>
+      </header>
+
+      <section
+        aria-labelledby="botones-titulo"
+        class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-lg"
+      >
+        <div class="space-y-1">
+          <h2 id="botones-titulo" class="text-2xl font-bold">Botones</h2>
+          <p class="text-slate-300">Tres variantes con estados hover y foco de teclado.</p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <button
+            type="button"
+            class="rounded-2xl bg-amber-400 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-slate-900"
+          >Inscríbete</button>
+          <button
+            type="button"
+            class="rounded-2xl bg-slate-700 px-6 py-3 font-bold text-white shadow-lg transition-colors hover:bg-slate-600 focus:outline-none focus:ring-4 focus:ring-slate-300 focus:ring-offset-2 focus:ring-offset-slate-900"
+          >Ver las rutas</button>
+          <button
+            type="button"
+            class="rounded-2xl border-2 border-amber-300 px-6 py-3 font-bold text-amber-300 shadow-lg transition-colors hover:bg-amber-300 hover:text-slate-950 focus:outline-none focus:ring-4 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-slate-900"
+          >Consultar disponibilidad</button>
+        </div>
+      </section>
+
+      <section aria-labelledby="card-titulo" class="space-y-4">
+        <h2 id="card-titulo" class="text-2xl font-bold">Card</h2>
+        <article
+          class="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-lg transition-shadow hover:shadow-2xl"
+        >
+          <div class="space-y-4 p-6">
+            <span
+              class="inline-flex rounded-2xl bg-emerald-950 px-3 py-1 text-sm font-bold text-emerald-300"
+            >Fácil</span>
+            <div class="space-y-2">
+              <h3 class="text-2xl font-bold">Luces del Centro</h3>
+              <p class="leading-relaxed text-slate-300">
+                Un recorrido nocturno por el corazón de Medellín, ideal para
+                disfrutar la ciudad sobre dos ruedas.
+              </p>
+            </div>
+            <dl class="grid gap-4 text-sm sm:grid-cols-3">
+              <div>
+                <dt class="text-slate-300">Distancia</dt>
+                <dd class="font-semibold">10 km</dd>
+              </div>
+              <div>
+                <dt class="text-slate-300">Duración</dt>
+                <dd class="font-semibold">2 h</dd>
+              </div>
+              <div>
+                <dt class="text-slate-300">Precio</dt>
+                <dd class="font-semibold text-amber-300">$55.000</dd>
+              </div>
+            </dl>
+            <button
+              type="button"
+              class="rounded-2xl bg-amber-400 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-slate-900"
+            >Elegir esta ruta</button>
+          </div>
+        </article>
+      </section>
+
+      <section aria-labelledby="alertas-titulo" class="space-y-4">
+        <div class="space-y-1">
+          <h2 id="alertas-titulo" class="text-2xl font-bold">Alertas</h2>
+          <p class="text-slate-300">Mensajes con fondo suave y borde lateral semántico.</p>
+        </div>
+        <div class="space-y-4">
+          <div
+            class="rounded-2xl border-l-4 border-sky-300 bg-sky-950 p-6 text-sky-100"
+          >
+            <h3 class="font-bold text-sky-200">Información</h3>
+            <p class="mt-2 leading-relaxed">
+              Llega 15 minutos antes al punto de encuentro para alistar tu bici.
+            </p>
+          </div>
+          <div
+            role="alert"
+            class="rounded-2xl border-l-4 border-emerald-300 bg-emerald-950 p-6 text-emerald-100"
+          >
+            <h3 class="font-bold text-emerald-200">Inscripción confirmada</h3>
+            <p class="mt-2 leading-relaxed">
+              Tu cupo está reservado. Te esperamos para rodar esta noche.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border-l-4 border-amber-300 bg-amber-950 p-6 text-amber-100"
+          >
+            <h3 class="font-bold text-amber-200">Advertencia</h3>
+            <p class="mt-2 leading-relaxed">
+              Recuerda llevar luces y casco; son obligatorios durante el recorrido.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="formulario-titulo"
+        class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-lg"
+      >
+        <div class="space-y-1">
+          <h2 id="formulario-titulo" class="text-2xl font-bold">Campos de formulario</h2>
+          <p class="text-slate-300">Etiquetas visibles y foco destacado al navegar con teclado.</p>
+        </div>
+        <form class="space-y-6">
+          <div class="space-y-2">
+            <label for="correo" class="block font-semibold">Correo electrónico</label>
+            <input
+              id="correo"
+              name="correo"
+              type="email"
+              autocomplete="email"
+              placeholder="nombre@ejemplo.com"
+              aria-describedby="correo-ayuda"
+              class="w-full rounded-2xl border border-slate-600 bg-slate-950 px-4 py-3 text-slate-100 placeholder:text-slate-400 transition-colors hover:border-slate-300 focus:border-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-200/50"
+            />
+            <p id="correo-ayuda" class="text-sm leading-relaxed text-slate-300">
+              Te enviaremos la confirmación y los detalles de la ruta.
+            </p>
+          </div>
+          <div class="space-y-2">
+            <label for="celular" class="block font-semibold">Celular</label>
+            <input
+              id="celular"
+              name="celular"
+              type="tel"
+              autocomplete="tel"
+              placeholder="300 123 4567"
+              aria-describedby="celular-ayuda"
+              class="w-full rounded-2xl border border-slate-600 bg-slate-950 px-4 py-3 text-slate-100 placeholder:text-slate-400 transition-colors hover:border-slate-300 focus:border-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-200/50"
+            />
+            <p id="celular-ayuda" class="text-sm leading-relaxed text-slate-300">
+              Incluye el indicativo si tu número es de otro país.
+            </p>
+          </div>
+        </form>
+      </section>
+
+      <section
+        aria-labelledby="reglas-titulo"
+        class="space-y-3 rounded-2xl border border-slate-700 bg-slate-900 p-6"
+      >
+        <h2 id="reglas-titulo" class="text-2xl font-bold">Reglas del kit</h2>
+        <ul class="list-inside list-disc space-y-2 leading-relaxed text-slate-300">
+          <li>Radio común: esquinas redondeadas `rounded-2xl`.</li>
+          <li>Espaciado en múltiplos de 4 px: escala Tailwind 1, 2, 3, 4, 6 y 8.</li>
+          <li>Base compartida: fondo `slate-950`, superficies `slate-900`, texto claro y acento `amber`.</li>
+          <li>Colores semánticos adicionales: `sky` para información, `emerald` para éxito y `amber` para advertencia.</li>
+          <li>Las acciones y los campos conservan hover/foco visible; los botones son operables con teclado.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
