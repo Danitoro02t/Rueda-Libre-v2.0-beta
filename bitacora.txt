@@ -846,3 +846,26 @@ Dia 21 - 30/10/2026 - Cierre semanal: identidad Rueda Libre v2.0
   Ademas, `gh api` no pudo consultar la configuracion porque esta
   sesion de GitHub CLI no tiene autenticacion; la URL de v2.0 queda
   pendiente de verificar/publicar y no se presenta como activa.
+
+
+Dia 22 - 03/11/2026 - Prototipo de Rueda Nocturna con Tailwind
+
+1. Seccion principal
+- Cree `nocturna/prototipo.html` con el Play CDN de Tailwind y una
+  seccion principal para la campaña "Nuevo · Jueves a sábado".
+- Inclui un unico h1 ("Rueda Nocturna"), el subtitulo, los datos
+  "3 rutas" y "Desde $55.000", y el enlace "Inscríbete", que lleva a
+  la pagina de reservas.
+- Use utilidades de espaciado, ancho, color y tipografia; no agregue
+  CSS propio, estilos en linea ni clases de Bootstrap.
+
+2. Boton: Bootstrap y Tailwind
+- En la semana 2 construi el boton con la clase de componente de
+  Bootstrap `btn btn-primary`, que aplica el estilo predeterminado del
+  boton primario y el color de marca configurado.
+- Hoy di apariencia de boton al enlace con las utilidades Tailwind
+  `p-4`, `bg-amber-400`, `text-slate-950`, `font-bold`, `uppercase` y
+  `tracking-wide`.
+- Diferencia clave: Bootstrap ofrece componentes listos para usar;
+  Tailwind es utility-first y permite componer el estilo combinando
+  clases pequenas directamente en el HTML.
