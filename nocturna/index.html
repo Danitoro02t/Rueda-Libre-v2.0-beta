@@ -11,7 +11,7 @@
     <link href="./src/output.css" rel="stylesheet" />
   </head>
   <body class="bg-slate-950 p-6 font-sans text-slate-100">
-    <main class="mx-auto w-full max-w-3xl">
+    <main class="mx-auto w-full max-w-3xl space-y-8">
       <section class="space-y-8 rounded-3xl bg-slate-900 p-8 text-center shadow-2xl">
         <p class="text-sm font-bold uppercase tracking-widest text-amber-300">
           Nuevo · Jueves a sábado
@@ -24,7 +24,7 @@
             Descubre Medellín en bici cuando se encienden las luces
           </p>
         </div>
-        <div id="rutas" class="space-y-2">
+        <div class="space-y-2">
           <p class="text-2xl font-semibold text-amber-300">3 rutas</p>
           <p class="text-2xl font-semibold text-amber-300">Desde $55.000</p>
         </div>
@@ -42,6 +42,118 @@
             class="rounded-full border-2 border-amber-300 px-6 py-3 font-bold text-amber-300 shadow-lg transition-colors hover:bg-amber-300 hover:text-slate-950 focus:outline-none focus:ring-4 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-slate-900"
           >Consultar disponibilidad</a>
         </nav>
+      </section>
+      <section id="rutas" aria-labelledby="rutas-titulo" class="space-y-6">
+        <h2 id="rutas-titulo" class="text-3xl font-bold tracking-tight">
+          Rutas
+        </h2>
+        <div class="space-y-6">
+          <article
+            class="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-lg transition-shadow hover:shadow-2xl"
+          >
+            <img
+              class="h-48 w-full object-cover"
+              src="../img/portada.jpg"
+              alt="Ilustración de una persona recorriendo Medellín en bicicleta"
+            />
+            <div class="space-y-5 p-6">
+              <span
+                class="inline-flex rounded-full bg-emerald-950 px-3 py-1 text-sm font-bold text-emerald-300"
+                >Fácil</span
+              >
+              <h3 class="text-2xl font-bold">Luces del Centro</h3>
+              <dl class="space-y-3">
+                <div>
+                  <dt class="text-sm text-slate-300">Distancia</dt>
+                  <dd class="font-semibold">10 km</dd>
+                </div>
+                <div>
+                  <dt class="text-sm text-slate-300">Duración</dt>
+                  <dd class="font-semibold">2 h</dd>
+                </div>
+                <div>
+                  <dt class="text-sm text-slate-300">Punto de encuentro</dt>
+                  <dd class="font-semibold">Sede de Rueda Libre</dd>
+                </div>
+              </dl>
+              <p class="text-2xl font-bold text-amber-300">$55.000</p>
+              <a
+                href="../paginas/reservas.html"
+                class="rounded-full bg-amber-400 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-slate-900"
+              >Inscríbete</a>
+            </div>
+          </article>
+          <article
+            class="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-lg transition-shadow hover:shadow-2xl"
+          >
+            <img
+              class="h-48 w-full object-cover"
+              src="../img/portada.jpg"
+              alt="Ilustración de una persona recorriendo Medellín en bicicleta"
+            />
+            <div class="space-y-5 p-6">
+              <span
+                class="inline-flex rounded-full bg-amber-950 px-3 py-1 text-sm font-bold text-amber-300"
+                >Medio</span
+              >
+              <h3 class="text-2xl font-bold">Miradores de la Ciudad</h3>
+              <dl class="space-y-3">
+                <div>
+                  <dt class="text-sm text-slate-300">Distancia</dt>
+                  <dd class="font-semibold">16 km</dd>
+                </div>
+                <div>
+                  <dt class="text-sm text-slate-300">Duración</dt>
+                  <dd class="font-semibold">3 h</dd>
+                </div>
+                <div>
+                  <dt class="text-sm text-slate-300">Punto de encuentro</dt>
+                  <dd class="font-semibold">Sede de Rueda Libre</dd>
+                </div>
+              </dl>
+              <p class="text-2xl font-bold text-amber-300">$75.000</p>
+              <a
+                href="../paginas/reservas.html"
+                class="rounded-full bg-amber-400 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-slate-900"
+              >Inscríbete</a>
+            </div>
+          </article>
+          <article
+            class="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-lg transition-shadow hover:shadow-2xl"
+          >
+            <img
+              class="h-48 w-full object-cover"
+              src="../img/portada.jpg"
+              alt="Ilustración de una persona recorriendo Medellín en bicicleta"
+            />
+            <div class="space-y-5 p-6">
+              <span
+                class="inline-flex rounded-full bg-rose-950 px-3 py-1 text-sm font-bold text-rose-300"
+                >Difícil</span
+              >
+              <h3 class="text-2xl font-bold">Luna en Las Palmas</h3>
+              <dl class="space-y-3">
+                <div>
+                  <dt class="text-sm text-slate-300">Distancia</dt>
+                  <dd class="font-semibold">22 km</dd>
+                </div>
+                <div>
+                  <dt class="text-sm text-slate-300">Duración</dt>
+                  <dd class="font-semibold">3,5 h</dd>
+                </div>
+                <div>
+                  <dt class="text-sm text-slate-300">Punto de encuentro</dt>
+                  <dd class="font-semibold">Sede de Rueda Libre</dd>
+                </div>
+              </dl>
+              <p class="text-2xl font-bold text-amber-300">$95.000</p>
+              <a
+                href="../paginas/reservas.html"
+                class="rounded-full bg-amber-400 px-6 py-3 font-bold text-slate-950 shadow-lg transition-colors hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-slate-900"
+              >Inscríbete</a>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
   </body>
