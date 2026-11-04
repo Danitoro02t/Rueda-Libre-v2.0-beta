@@ -946,3 +946,38 @@ Dia 23 - 03/11/2026 - Kit de componentes para Rueda Nocturna
   verificarlas. `gh` no esta autenticado en esta sesion, por lo que no
   fue posible configurar o actualizar GitHub Pages; la publicacion queda
   pendiente de autenticacion y subida de estos cambios.
+
+
+Dia 21 - 04/11/2026 - Prueba aislada de la flota con Bootstrap 5.3
+
+1. Tiempo invertido
+- Cronometre 2 minutos y 1 segundo, desde las 17:33:09 hasta las
+  17:35:10 (-05:00), incluyendo el ajuste de la pagina y la prueba en
+  cuatro anchos de viewport.
+
+2. Distribucion: CSS propio frente a clases Bootstrap
+- La version propia documentada el 28/10 distribuye la flota con una
+  regla de CSS Grid: 3 lineas de declaraciones (`display`,
+  `grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr))` y
+  `gap`).
+- En esta prueba no hay CSS propio ni se enlaza `styles.css`. Bootstrap
+  resuelve la distribucion con `container`, `row g-4` y las clases
+  `col-12 col-sm-6 col-lg-4 col-xl-3` repetidas en los 7 articulos:
+  30 clases de grilla/espaciado en total (28 de columnas, `row` y
+  `g-4`).
+- Las siete bicicletas se muestran en 1 columna en celular, 2 desde
+  sm (576 px), 3 desde lg (992 px) y 4 desde xl (1200 px).
+
+3. Beneficio y control
+- Bootstrap aporta el contenedor, el sistema de 12 columnas, los
+  breakpoints y los gutters sin escribir sus reglas CSS.
+- Se pierde la libertad de escoger anchos y cortes propios de la grilla:
+  la distribucion depende de los breakpoints predefinidos y de que
+  cargue el CDN. Cambiarla requiere modificar las clases o agregar CSS.
+
+4. Comprobacion
+- La pagina carga Bootstrap 5.3.8 desde jsDelivr con CSS y bundle
+  JavaScript, ambos con SRI; no incluye CSS en linea ni `styles.css`.
+- En el navegador en modo dispositivo, comprobe 390, 600, 1000 y 1300
+  px: 1, 2, 3 y 4 columnas respectivamente. El navegador aplico la hoja
+  y el bundle de Bootstrap; las 7 rutas de imagen relativas existen.
