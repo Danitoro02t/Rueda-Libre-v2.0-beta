@@ -869,3 +869,34 @@ Dia 22 - 03/11/2026 - Prototipo de Rueda Nocturna con Tailwind
 - Diferencia clave: Bootstrap ofrece componentes listos para usar;
   Tailwind es utility-first y permite componer el estilo combinando
   clases pequenas directamente en el HTML.
+
+
+Dia 23 - 03/11/2026 - CLI de Tailwind y variantes de botones
+
+1. Configuracion de produccion
+- En `nocturna/` instale `tailwindcss` y `@tailwindcss/cli` como
+  dependencias de desarrollo. `src/input.css` importa Tailwind y la
+  CLI genera `src/output.css`; `index.html` enlaza el archivo generado,
+  sin cargar el Play CDN.
+- El `.gitignore` local excluye `node_modules/`. El CSS generado se
+  conserva en el repositorio para que GitHub Pages pueda servirlo sin
+  ejecutar la CLI.
+
+2. Clases generadas
+- En `output.css` encontre las clases utilizadas `bg-amber-400` y
+  `hover:bg-amber-300`, incluyendo sus reglas para el estado hover.
+- La clase no utilizada `bg-pink-500` no aparece. Tailwind escanea los
+  archivos fuente para detectar las clases usadas y genera solo el CSS
+  necesario; asi evita incluir estilos para utilidades que no aparecen
+  en el HTML.
+
+3. Variantes y teclado
+- La pagina presenta tres variantes: principal, secundaria y contorno.
+  Cada enlace tiene un cambio de color con `hover:` y un anillo de foco
+  con `focus:ring-*` y `focus:ring-offset-*`; al quitar el contorno
+  predeterminado con `focus:outline-none`, el anillo lo reemplaza como
+  indicador visible.
+- Prueba con teclado: navegue con Tab por "Inscríbete", "Ver las rutas"
+  y "Consultar disponibilidad". Los tres mostraron su anillo de foco;
+  tambien confirme en navegador que el hover cambia el color del boton
+  principal.
