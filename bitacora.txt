@@ -981,3 +981,25 @@ Dia 21 - 04/11/2026 - Prueba aislada de la flota con Bootstrap 5.3
 - En el navegador en modo dispositivo, comprobe 390, 600, 1000 y 1300
   px: 1, 2, 3 y 4 columnas respectivamente. El navegador aplico la hoja
   y el bundle de Bootstrap; las 7 rutas de imagen relativas existen.
+
+
+Ajustes de inicio - 04/11/2026
+
+1. Conflictos revisados en DevTools (Styles)
+- Espaciado de portada: `.hero-section` declaraba `padding` despues de
+  Bootstrap y anulaba el espaciado de utilidad. Quite esa declaracion y
+  use `p-4 p-lg-5`; Bootstrap controla el relleno sin CSS de distribucion
+  propio. Para encabezados, `fs-*` y `mb-*` fijan tamaño y margen donde
+  se necesitan, manteniendo Montserrat en la hoja propia.
+- Leyenda del carrusel: el fondo de `.carousel-caption` quedaba tachado
+  por `bg-dark`. Elimine la regla redundante y deje que la utilidad de
+  Bootstrap pinte el fondo, sin agregar `!important`.
+- Enlaces: el color azul base de Bootstrap compite con el selector propio
+  `a`. La hoja propia se carga despues y usa `--bs-link-color` (Verde
+  Ruta); `a:hover` conserva Azul Noche como estado de interaccion.
+
+2. Prueba adaptable
+- En modo dispositivo revise 360, 768 y 1280 px. La portada cambia a dos
+  columnas desde md; flota y beneficios usan dos columnas desde sm; rutas
+  pasan a dos desde md. A 1280 px se ven tres columnas en flota y rutas y
+  cuatro en beneficios. Las fuentes y colores de marca se conservan.

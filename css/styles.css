@@ -111,12 +111,14 @@ aside {
   color: var(--color-gris-asfalto);
 }
 
+/* Estilos de presentación usados por las páginas de tarifas y reservas. */
 .tariff-info,
 .booking-info {
   border-radius: 0.75rem;
   background-color: var(--color-blanco);
 }
 
+/* Tablas de tarifas. */
 table {
   width: 100%;
   table-layout: fixed;
@@ -164,7 +166,6 @@ table tr > :first-child {
 }
 
 .hero-section {
-  padding: clamp(1.25rem, 4vw, 3rem);
   overflow: hidden;
   border: 1px solid rgba(31, 122, 78, 0.2);
   border-radius: var(--bs-border-radius-lg);
@@ -187,10 +188,6 @@ table tr > :first-child {
 
 .section-heading.text-center::after {
   margin-inline: auto;
-}
-
-.carousel-caption {
-  background-color: var(--color-azul-noche);
 }
 
 .btn-primary {
@@ -231,6 +228,7 @@ table tr > :first-child {
   background-color: #F1F8F3;
 }
 
+/* Controles de formulario usados por la página de reservas. */
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
@@ -284,6 +282,7 @@ button:focus,
 }
 
 @media (min-width: 768px) {
+  /* Tablas de tarifas. */
   table {
     font-size: 1rem;
   }
