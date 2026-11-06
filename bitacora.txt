@@ -1118,3 +1118,111 @@ completa en cada ancho.
 - Comprobacion extra a 640 px (inicio de `sm:`): rutas y pasos ya pasan
   a 2 columnas; el encabezado sigue apilado hasta 768 px.
 - En ningun ancho hay elementos que sobresalgan del viewport.
+
+
+Dia 26 - 06/11/2026 - Refactor de botones y comparativa de frameworks
+
+1. Repeticion y componentes
+- Antes del refactor conte las cadenas completas de clases en
+  `nocturna/index.html`. Las mas repetidas fueron:
+
+| Lista de clases / elemento                           | Veces |
+|------------------------------------------------------|-------|
+| `space-y-2` (contenedores)                           | 9     |
+| `text-gris-asfalto dark:text-blanco` (terminos)      | 9     |
+| `font-montserrat text-2xl font-bold` (titulos h3)    | 7     |
+| `leading-relaxed text-gris-asfalto dark:text-blanco` | 7     |
+| enlace de navegacion (hover, foco y dark)            | 6     |
+| `font-semibold` (valores de definiciones)            | 6     |
+| boton principal amarillo (CTA)                      | 6     |
+| `py-12 md:py-16 lg:py-24` (secciones)                | 4     |
+| tarjeta de paso                                     | 4     |
+| card de ruta y etiqueta de dificultad                | 3 cada una |
+| campo de formulario y etiqueta                       | 2 cada uno |
+
+- Los seis CTA principales repetian la misma lista extensa de utilidades.
+  Cree `.btn-primary`, `.btn-secondary` y `.btn-outline` en
+  `src/input.css`, dentro de `@layer components`, con tres `@apply` en
+  total. Los ocho botones de la landing usan una de esas variantes; los
+  botones de `componentes.html` usan las mismas para evitar divergencias.
+- Mantengo las clases del kit para cards, etiquetas, paneles y campos.
+  En la landing ordene los 132 atributos `class` por layout, espaciado,
+  tipografia, color y estados/variantes; se verifico que no cambio
+  ningun token de clase.
+
+2. Pruebas responsive, tema y foco
+Prueba en Chromium con la pagina cargada tras compilar el CSS. El
+desbordamiento se verifico comparando `scrollWidth` con `clientWidth`.
+
+| Viewport | Inicio | Rutas | Pasos | Inscripcion | Scroll horizontal |
+|----------|--------|-------|-------|-------------|-------------------|
+| 360 px   | 1 col  | 1 col | 1 col | 1 col       | No                |
+| 640 px   | 1 col  | 2 col | 2 col | 1 col       | No                |
+| 768 px   | 2 col  | 2 col | 2 col | 2 col       | No                |
+| 1024 px  | 2 col  | 3 col | 4 col | 2 col       | No                |
+| 1280 px  | 2 col  | 3 col | 4 col | 2 col       | No                |
+
+- Modo claro: fondo Crema, texto Azul Noche y CTA Amarillo Farol.
+- Modo oscuro: fondo Azul Noche, texto Crema, cards Gris Asfalto y
+  campos Azul Noche. El borde amarillo del boton de contorno tambien
+  se conserva.
+- El foco por teclado del boton principal muestra un anillo visible.
+- Contrastes WCAG 2.1 AA en el modo oscuro:
+
+| Texto / fondo                    | Contraste |
+|----------------------------------|-----------|
+| Crema / Azul Noche               | 14.83:1   |
+| Blanco / Gris Asfalto            | 6.05:1    |
+| Crema / Gris Asfalto             | 5.57:1    |
+| Amarillo Farol / Azul Noche      | 11.08:1   |
+| Azul Noche / Amarillo Farol      | 11.08:1   |
+
+3. Medicion de CSS y JavaScript
+- `npm --prefix nocturna run build` ejecuta la CLI con `--minify`.
+  `nocturna/src/output.css` quedo en 22,320 bytes (21.80 KiB); la
+  referencia gzip local del mismo archivo minificado es 4,283 bytes.
+- La version Bootstrap 5.3.8 de `index.html` carga
+  `bootstrap.min.css` y `bootstrap.bundle.min.js`. Las respuestas de
+  jsDelivr dieron HTTP 200. Con `Accept-Encoding: br`, el tamaño
+  transferido fue:
+
+| Recurso Bootstrap 5.3.8      | Sin compresion | Network (Brotli) |
+|------------------------------|----------------|------------------|
+| `bootstrap.min.css`          | 232,111 bytes  | 33,048 bytes      |
+| `bootstrap.bundle.min.js`    | 80,496 bytes   | 24,469 bytes      |
+
+- La solicitud de recursos se comprobó en el navegador; como se abrió
+  la pagina con `file://`, Resource Timing oculta el tamaño transferido
+  (reporta 0 para recursos externos). Para no inventar el dato de
+  Network, se midio el `Content-Length` de las mismas respuestas CDN con
+  Brotli habilitado. El tamaño gzip de Tailwind es una referencia local,
+  no una captura de transferencia de GitHub Pages. Se excluyen Bootstrap
+  Icons y Google Fonts de ambas comparaciones.
+
+4. Bootstrap vs Tailwind y recomendacion
+
+| Criterio             | Bootstrap (version 2.0)                                  | Tailwind (landing nocturna)                                  |
+|----------------------|----------------------------------------------------------|--------------------------------------------------------------|
+| Curva de aprendizaje | `container`, `row`, `col`, `card` y `btn` dan patrones    | Hay que aprender utilidades y variantes; se ven directamente |
+|                      | listos y el grid respondio rapido. La cascada y sus       | en el marcado. La primera iteracion fue verbosa; `@apply`    |
+|                      | overrides de marca requirieron revisar especificidad.    | redujo la repeticion de botones sin ocultar el layout.      |
+| Personalizacion      | Ajuste variables `--bs-*` y `css/styles.css`; conserva    | `@theme` define los siete colores de marca y las fuentes;   |
+|                      | componentes, pero las reglas propias dependen del orden. | las variantes responsive/dark adaptan cada superficie.     |
+| Tamano final         | CSS: 232,111 bytes sin compresion; JS: 80,496 bytes.      | CSS minificado: 22,320 bytes; no carga JavaScript del       |
+|                      | En Network: 33,048 B CSS + 24,469 B bundle Brotli.       | framework. Son mediciones con compresion distinta.          |
+| Casos de uso         | Buen ajuste para interfaces convencionales y componentes | Buen ajuste para una identidad visual propia, responsive   |
+|                      | interactivos listos, como carrusel y menu colapsable.    | y dark mode; los comportamientos interactivos requieren JS. |
+
+- Recomendacion para la proxima version de Rueda Libre: Tailwind CSS.
+  La marca y el tema oscuro requieren control fino, la landing ya
+  demuestra un patron responsive consistente y sus tres variantes
+  reutilizables evitan repetir clases de boton. Ademas, el CSS minificado
+  de Tailwind pesa menos que el CSS Bootstrap sin comprimir. En la
+  planificacion de la migracion habra que implementar y probar con
+  JavaScript accesible el carrusel y el menu colapsable que Bootstrap
+  resolvia de fabrica; si se prioriza entregar esos componentes listos
+  con menos codigo propio, Bootstrap sigue siendo la alternativa mas
+  simple.
+- La publicacion de GitHub Pages queda pendiente: `gh auth status`
+  confirma que esta sesion no tiene autenticacion, por lo que no se
+  publico ni se subieron cambios al remoto.
