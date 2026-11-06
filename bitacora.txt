@@ -1055,3 +1055,66 @@ Dia 24 - 06/11/2026 - Layout de escritorio de la landing de Rueda Nocturna
   unicas diferencias son las imagenes (logo y portada), que no son
   componentes. `npm run build` regenero `src/output.css` con las nuevas
   utilidades (`max-w-6xl`, `grid-cols-2/3/4`, `justify-between`, etc.).
+
+
+Dia 25 - 06/11/2026 - Landing de Rueda Nocturna responsive (mobile-first)
+
+1. Diagnostico a 360 px (version de escritorio, antes del cambio)
+- Scroll horizontal: el documento media 492 px de ancho en un viewport
+  de 360 px. El desborde lo causaba la `nav` del encabezado (enlaces +
+  boton "Inscríbete" en una sola fila).
+- Encabezado en fila: el logo, los tres enlaces y el boton se apretaban;
+  "Rueda Nocturna" y "¿Cómo funciona?" se partian en dos lineas.
+- Seccion principal en 2 columnas: el texto quedaba en una columna de
+  ~150 px y la imagen, angosta y alargada.
+- Rutas en 3 columnas: cards de ~90 px; titulos cortados ("Centr",
+  "Ciuda", "Palma"), una palabra por linea y el boton "Elegir esta ruta"
+  partido en tres lineas y recortado.
+- Pasos en 4 columnas: columnas de ~60 px; titulos y textos recortados
+  ("Recog", "Rued", "entregar").
+- Inscripcion en 2 columnas: los campos median ~70 px, el placeholder
+  quedaba cortado y el boton "Consultar disponibilidad" se salia del
+  panel.
+- Pie en fila: tres bloques angostos con textos de 3 a 6 lineas.
+- Espaciado de escritorio: `py-16` y `px-6` gastaban demasiado espacio
+  vertical y lateral para un celular.
+
+2. Clases mobile-first
+- Regla: las clases sin prefijo son las del celular; `sm:` (640 px),
+  `md:` (768 px) y `lg:` (1024 px) solo agregan cambios hacia arriba.
+  No se usa `sm:` para estilos del celular.
+- Contenedor comun (todas las secciones, encabezado y pie):
+  `mx-auto max-w-6xl px-4 sm:px-6 lg:px-8`.
+- Encabezado: `flex flex-col items-center gap-4` (apilado) y
+  `md:flex-row md:justify-between` (en fila). Los enlaces a secciones
+  usan `hidden md:flex`; el boton "Inscríbete" queda siempre visible.
+- Seccion principal: `grid-cols-1 md:grid-cols-2`; imagen
+  `h-56 sm:h-72 lg:h-96`.
+- Rutas: `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`.
+- Pasos: `grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`.
+- Inscripcion: `grid-cols-1 md:grid-cols-2` dentro del panel del kit.
+- Pie: `flex flex-col gap-8` y `md:flex-row md:items-start
+  md:justify-between`.
+- Tipografia y espaciado: titulo principal `text-4xl sm:text-5xl
+  lg:text-6xl`; titulos de seccion `text-3xl lg:text-4xl`; relleno de
+  secciones `py-12 md:py-16 lg:py-24`; separacion interna
+  `space-y-8 lg:space-y-12`.
+- Los componentes del kit no cambiaron; los prefijos solo se agregaron
+  en contenedores y tipografia de la pagina.
+
+3. Pruebas por ancho
+Medido en Microsoft Edge (Chromium) cargando la pagina en un marco del
+ancho exacto, con un script que lee `scrollWidth`, las columnas
+calculadas de cada grid y la direccion del flex, mas captura de pantalla
+completa en cada ancho.
+
+| Ancho   | Scroll horiz. | Encabezado                      | Inicio | Rutas | Pasos | Inscripcion | Pie   | Titulo | Relleno secc. |
+|---------|---------------|---------------------------------|--------|-------|-------|-------------|-------|--------|---------------|
+| 360 px  | No (360)      | Apilado, solo logo + boton      | 1 col  | 1 col | 1 col | 1 col       | Pila  | 36 px  | 48 px         |
+| 768 px  | No (768)      | En fila, enlaces visibles       | 2 col  | 2 col | 2 col | 2 col       | Fila  | 48 px  | 64 px         |
+| 1024 px | No (1024)     | En fila, enlaces visibles       | 2 col  | 3 col | 4 col | 2 col       | Fila  | 60 px  | 96 px         |
+| 1280 px | No (1280)     | En fila, enlaces visibles       | 2 col  | 3 col | 4 col | 2 col       | Fila  | 60 px  | 96 px         |
+
+- Comprobacion extra a 640 px (inicio de `sm:`): rutas y pasos ya pasan
+  a 2 columnas; el encabezado sigue apilado hasta 768 px.
+- En ningun ancho hay elementos que sobresalgan del viewport.
